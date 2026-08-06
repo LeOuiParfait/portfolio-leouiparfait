@@ -57,14 +57,16 @@ export const LoveAndLifeSection: React.FC<LoveAndLifeProps> = ({
                     : 'right'
               }
               delay={idx * 80}
-              onClick={() => onSelectStory(story)}
-              className={`group cursor-pointer ${
+              className={`group ${
                 story.id === 'diane-et-théo' || story.id === 'justine-jérôme'
                   ? 'md:col-span-2'
                   : ''
               }`}
             >
-              <div className="relative w-full overflow-hidden rounded-sm aspect-video shadow-xl">
+              <div
+                className="relative w-full overflow-hidden rounded-sm aspect-video shadow-xl cursor-pointer"
+                onClick={() => onSelectStory(story)}
+              >
                 {story.video ? (
                   <video
                     src={story.video}
@@ -73,13 +75,13 @@ export const LoveAndLifeSection: React.FC<LoveAndLifeProps> = ({
                     muted
                     loop
                     playsInline
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover pointer-events-none"
                   />
                 ) : (
                   <img
                     src={story.image}
                     alt={story.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
                     referrerPolicy="no-referrer"
                   />
                 )}
