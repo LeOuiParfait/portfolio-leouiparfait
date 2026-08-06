@@ -52,15 +52,15 @@ export const FooterBanner: React.FC<FooterBannerProps> = ({
           </div>
 
           <h2 className="font-serif-main text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight mt-2">
-            Prêts à{' '}
+            Trouvez l'
             <span
               className={`font-script text-4xl sm:text-5xl italic font-normal ${
                 isDarkMode ? 'text-[#c8c0f5]' : 'text-[#78876e]'
               }`}
             >
-              commencer
+              offre
             </span>{' '}
-            votre histoire ?
+            adaptée à votre mariage
           </h2>
 
           <p
@@ -68,8 +68,9 @@ export const FooterBanner: React.FC<FooterBannerProps> = ({
               isDarkMode ? 'text-[#b5b0a5]' : 'text-[#5a5750]'
             }`}
           >
-            Échangeons autour de votre vision, de votre offre idéale et de tout ce qui rendra votre
-            jour J inoubliable. Réponse garantie en moins de 30 minutes.
+            Parcourez nos offres Signature, Élégance et Harmonie. Chaque formule est conçue pour
+            s'adapter à votre niveau d'accompagnement, de l'organisation complète à la coordination
+            du jour J.
           </p>
 
           <div className="mt-8 flex justify-center">
