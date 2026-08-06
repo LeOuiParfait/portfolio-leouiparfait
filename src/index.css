@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  overflow-x: hidden;
+}
+
 @layer utilities {
   .font-serif-main {
     font-family: 'Cormorant Garamond', Georgia, serif;
