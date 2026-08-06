@@ -24,9 +24,7 @@ export const PhotoLightboxModal: React.FC<PhotoLightboxModalProps> = ({
 }) => {
   const [photoIndex, setPhotoIndex] = useState<number | null>(null);
 
-  if (!story) return null;
-
-  const gallery = story.gallery || [];
+  const gallery = story?.gallery || [];
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -56,6 +54,8 @@ export const PhotoLightboxModal: React.FC<PhotoLightboxModalProps> = ({
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
   }, [photoIndex, onClose, gallery]);
+
+  if (!story) return null;
 
   const closePhoto = () => setPhotoIndex(null);
   const openPhoto = (idx: number) => setPhotoIndex(idx);
