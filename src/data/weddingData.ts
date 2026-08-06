@@ -70,7 +70,7 @@ export const STORIES: StoryItem[] = [
       '/Thomas%20&%20R%C3%A9nia/4895581.webp',
     ],
     category: 'mariage',
-    description: 'Photo: Cuistoscliches Réception: Le Jardin d’Alya',
+    description: 'Photo: Romain Le Oui Parfait Réception: Le Jardin d’Alya',
   },
   {
     id: 'alan-et-daria',
@@ -266,7 +266,7 @@ export const STORIES: StoryItem[] = [
       '/Audrey%20&%20Abdel/2592992.webp',
     ],
     category: 'mariage',
-    description: 'Reportage publié par les mariés Vidéo: 21 grammes Production',
+    description: 'Romain Le Oui Parfait Vidéo: 21 grammes Production',
   },
   {
     id: 'david-charlotte',
@@ -451,7 +451,7 @@ export const STORIES: StoryItem[] = [
       '/Julia%20&%20Christian/4198837.webp',
     ],
     category: 'mariage',
-    description: 'Photo: Vincent Delaigle Réception: Château de la Brulaire',
+    description: 'Photo: Romain Le Oui Parfait Réception: Château de la Brulaire',
   },
   {
     id: 'justine-jérôme',
