@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenGuide, isDarkMo
       />
 
       {/* Eyebrow Row */}
-      <Reveal variant="fade" className="max-w-4xl mx-auto relative z-10">
+      <Reveal variant="fade" className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div
           className={`flex items-center justify-between text-[11px] sm:text-xs font-sans-clean gap-3 mb-6 sm:mb-10 ${
             isDarkMode ? 'text-[#b5b0a5]' : 'text-[#5a5750]'
@@ -103,7 +103,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenGuide, isDarkMo
       </Reveal>
 
       {/* Main Container */}
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
         {/* Left Photo Card (Tilted Couple Photo) */}
         <div className="lg:col-span-3 flex justify-center lg:justify-start order-2 lg:order-1">
           <div
@@ -148,10 +148,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenGuide, isDarkMo
         </div>
 
         {/* Center Text Block */}
-        <div className="lg:col-span-6 text-center order-1 lg:order-2 my-4 sm:my-0 px-2 sm:px-6">
+        <div className="lg:col-span-6 text-center order-1 lg:order-2 my-4 sm:my-0">
           <h2
             ref={titleRef}
-            className={`font-serif-main text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-normal tracking-tight ${
+            className={`font-serif-main text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-normal tracking-tight break-words ${
               isDarkMode ? 'text-[#c8c0f5]' : 'text-[#2c2b29]'
             }`}
           >
@@ -255,7 +255,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenGuide, isDarkMo
       </div>
 
       {/* Circle Quote Panel */}
-      <Reveal variant="zoom" delay={100} className="mt-14 sm:mt-16 flex justify-center relative z-10">
+      <Reveal variant="zoom" delay={100} className="mt-14 sm:mt-16 max-w-7xl mx-auto px-4 sm:px-6 flex justify-center relative z-10">
         <div
           className={`w-full max-w-[300px] sm:max-w-[420px] aspect-square rounded-full border flex flex-col items-center justify-center gap-4 sm:gap-6 text-center px-8 sm:px-12 ${
             isDarkMode ? 'border-[#c8c0f5]/60' : 'border-[#8b9a82]/60'
@@ -283,7 +283,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenGuide, isDarkMo
       </Reveal>
 
       {/* Thread & Bow Divider */}
-      <div className="mt-10 sm:mt-14 flex items-center max-w-5xl mx-auto px-4">
+      <div className="mt-10 sm:mt-14 flex items-center max-w-7xl mx-auto px-4 sm:px-6">
         <span className={`flex-1 h-px ${isDarkMode ? 'bg-[#c8c0f5]/40' : 'bg-[#8b9a82]/40'}`} />
         <svg className="w-24 sm:w-36 mx-3 sm:mx-5 shrink-0" viewBox="0 0 170 90" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

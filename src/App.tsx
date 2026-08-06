@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen transition-colors duration-300 font-sans-clean antialiased selection:bg-[#c8c0f5] selection:text-[#141311] ${
+      className={`min-h-screen overflow-x-hidden transition-colors duration-300 font-sans-clean antialiased selection:bg-[#c8c0f5] selection:text-[#141311] ${
         isDarkMode
           ? 'bg-[#141311] text-[#e8e4dc] dark-mode'
           : 'bg-[#faf8f5] text-[#2c2b29]'
