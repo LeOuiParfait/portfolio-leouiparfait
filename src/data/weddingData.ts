@@ -367,7 +367,7 @@ export const STORIES: StoryItem[] = [
       '/Gwendolyn%20&%20J%C3%A9r%C3%B4me/5002945.webp',
     ],
     category: 'mariage',
-    description: 'Photo: Nomadic_Prod Réception: Château d\'Aubry du Hainaut',
+    description: 'Photo: Romain Le Oui Parfait Réception: Château d\'Aubry du Hainaut',
   },
   {
     id: 'julia-christian',
@@ -502,7 +502,7 @@ export const STORIES: StoryItem[] = [
       '/Justine%20&%20J%C3%A9r%C3%B4me/4315899.webp',
     ],
     category: 'mariage',
-    description: 'Photo: Nomadic_Prod Réception: G Beach Sunset',
+    description: 'Photo: Romain Le Oui Parfait Réception: G Beach Sunset',
   },
 ];
 
