@@ -63,8 +63,9 @@ export const LoveAndLifeSection: React.FC<LoveAndLifeProps> = ({
                   : ''
               }`}
             >
-              <div
-                className="relative w-full overflow-hidden rounded-sm aspect-video shadow-xl cursor-pointer"
+              <button
+                type="button"
+                className="relative w-full overflow-hidden rounded-sm aspect-video shadow-xl cursor-pointer bg-transparent border-0 p-0 text-left"
                 onClick={() => onSelectStory(story)}
               >
                 {story.video ? (
@@ -111,7 +112,7 @@ export const LoveAndLifeSection: React.FC<LoveAndLifeProps> = ({
                     <span>Découvrir l'histoire</span>
                   </span>
                 </div>
-              </div>
+              </button>
             </Reveal>
           ))}
         </div>
