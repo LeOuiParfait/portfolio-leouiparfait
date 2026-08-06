@@ -4,13 +4,11 @@ import gsap from 'gsap';
 
 interface NavbarProps {
   onOpenContact: () => void;
-  onOpenGuide: () => void;
   isDarkMode: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenContact,
-  onOpenGuide,
   isDarkMode,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -156,39 +154,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </a>
               ))}
             </nav>
-
-            <div
-              className={`mt-8 sm:mt-10 pt-6 sm:pt-8 border-t flex flex-wrap justify-center gap-3 sm:gap-4 ${
-                isDarkMode ? 'border-[#2e2a24]' : 'border-[#e8e4dc]'
-              }`}
-            >
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  onOpenContact();
-                }}
-                className={`px-5 sm:px-8 py-2.5 sm:py-3 rounded-full font-sans-clean text-xs sm:text-sm font-medium transition-all shadow-md ${
-                  isDarkMode
-                    ? 'bg-[#c8c0f5] text-[#141311] hover:bg-[#e8e4dc]'
-                    : 'bg-[#8b9a82] text-white hover:bg-[#74836b]'
-                }`}
-              >
-                Vérifier ma date de mariage
-              </button>
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  onOpenGuide();
-                }}
-                className={`px-5 sm:px-8 py-2.5 sm:py-3 rounded-full border font-sans-clean text-xs sm:text-sm font-medium transition-all ${
-                  isDarkMode
-                    ? 'border-[#c8c0f5] text-[#c8c0f5] hover:bg-[#c8c0f5]/15'
-                    : 'border-[#8b9a82] text-[#5c6954] hover:bg-[#8b9a82]/10'
-                }`}
-              >
-                Shooting Tour EVJF / EVG
-              </button>
-            </div>
 
             {/* Socials — moved here on mobile, kept out of the header */}
             <div className="mt-8 flex md:hidden items-center justify-center gap-3">

@@ -38,7 +38,6 @@ export default function App() {
       <Navbar
         isDarkMode={isDarkMode}
         onOpenContact={() => setIsContactOpen(true)}
-        onOpenGuide={() => setIsGuideOpen(true)}
       />
 
       {/* Main Content Layouts (In exact order of design photos) */}
