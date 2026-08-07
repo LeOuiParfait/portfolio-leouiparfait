@@ -2,7 +2,7 @@ import { StoryItem, TestimonialItem, ProcessStep, ServiceCategory } from '../typ
 
 export const HERO_IMAGES = {
   coupleHero: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=85', // Couple élégant
-  dressHero: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85', // Décoration florale
+  dressHero: '/mariage.jpg', // Décoration florale
   flowerOverlay1: 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=300&q=80', // Décoration florale
   flowerOverlay2: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=300&q=80', // Échange d'alliances
   flowerFooterDark: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1800&q=85',
