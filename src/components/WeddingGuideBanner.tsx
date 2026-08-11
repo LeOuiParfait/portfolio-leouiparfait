@@ -1,6 +1,5 @@
 import React from 'react';
 import { Sparkles, CheckCircle2 } from 'lucide-react';
-import { HERO_IMAGES } from '../data/weddingData';
 import { Reveal } from './Reveal';
 
 interface WeddingGuideBannerProps {
@@ -42,18 +41,6 @@ export const WeddingGuideBanner: React.FC<WeddingGuideBannerProps> = ({
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
                 />
-                <div
-                  className={`absolute top-2 right-2 w-10 h-10 rounded-full p-0.5 shadow-sm border ${
-                    isDarkMode ? 'bg-[#22201d] border-[#38332c]' : 'bg-white border-[#e8e4dc]'
-                  }`}
-                >
-                  <img
-                    src={HERO_IMAGES.flowerOverlay1}
-                    alt="Décor floral"
-                    className="w-full h-full object-cover rounded-full"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
               </div>
               <p
                 className={`mt-2 text-center font-serif-main text-xs italic ${

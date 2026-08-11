@@ -123,19 +123,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenGuide, isDarkMo
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
-              {/* Corner White Flower Overlay */}
-              <div
-                className={`absolute -top-3 -right-3 w-10 h-10 sm:w-12 sm:h-12 rounded-full p-0.5 shadow-md border ${
-                  isDarkMode ? 'bg-[#25221d] border-[#3a352d]' : 'bg-white border-[#e8e4dc]'
-                }`}
-              >
-                <img
-                  src={HERO_IMAGES.flowerOverlay1}
-                  alt="Décor floral"
-                  className="w-full h-full object-cover rounded-full"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
             </div>
             <p
               className={`mt-3 text-center font-serif-main text-xs sm:text-sm italic ${
@@ -158,7 +145,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenGuide, isDarkMo
             Nous transformons vos{' '}
             <span
               className={`font-script text-4xl sm:text-6xl lg:text-7xl px-1 font-normal inline-block ${
-                isDarkMode ? 'text-[#c8c0f5]' : 'text-[#78876e]'
+                isDarkMode ? 'text-[#f4a8bf]' : 'text-[#78876e]'
               }`}
             >
               plus beaux instants
@@ -225,30 +212,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenGuide, isDarkMo
             >
               <img
                 src={HERO_IMAGES.dressHero}
-                alt="Décoration florale de mariage"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                alt="Immortaliser l'instant"
+                className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              {/* Top Flower Overlay */}
-              <div
-                className={`absolute top-2 left-2 w-10 h-10 sm:w-12 sm:h-12 rounded-full p-0.5 shadow-md border ${
-                  isDarkMode ? 'bg-[#25221d] border-[#3a352d]' : 'bg-white border-[#e8e4dc]'
-                }`}
-              >
-                <img
-                  src={HERO_IMAGES.flowerOverlay2}
-                  alt="Pétale"
-                  className="w-full h-full object-cover rounded-full"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
             </div>
             <p
               className={`mt-3 text-center font-serif-main text-xs sm:text-sm italic ${
                 isDarkMode ? 'text-[#e8e4dc]' : 'text-[#5c6954]'
               }`}
             >
-              « Décoration florale »
+              « Immortaliser l'instant »
             </p>
           </div>
         </div>
@@ -262,7 +236,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onOpenGuide, isDarkMo
           }`}
         >
           <p
-            className={`font-sans-clean text-xs sm:text-sm leading-relaxed max-w-[260px] ${
+            className={`font-sans-clean text-xs sm:text-sm italic leading-relaxed max-w-[260px] ${
               isDarkMode ? 'text-[#b5b0a5]' : 'text-[#5a5750]'
             }`}
           >

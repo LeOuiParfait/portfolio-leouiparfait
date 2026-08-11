@@ -88,9 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <img
               src="/logo-horizontal.png"
               alt="Le Oui Parfait"
-              className={`h-8 sm:h-11 w-auto transition-transform group-hover:scale-105 ${
-                isDarkMode ? 'bg-[#e8e4dc] rounded-md px-2 py-1' : ''
-              }`}
+              className="h-[120px] sm:h-[168px] w-auto max-w-none object-contain transition-transform group-hover:scale-105"
             />
           </a>
 

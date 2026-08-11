@@ -155,7 +155,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
           </Reveal>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-6 text-center">
             {TEAM_MEMBERS.map((member, idx) => (
-              <Reveal key={member.name} variant={idx % 2 === 0 ? 'up' : 'zoom'} delay={idx * 80} className="space-y-1">
+              <Reveal key={member.name} variant={idx % 2 === 0 ? 'up' : 'zoom'} delay={idx * 80} className="space-y-1 flex flex-col items-center justify-start">
                 <div
                   className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center overflow-hidden ${
                     member.image

@@ -59,24 +59,28 @@ export const CategoriesArches: React.FC<CategoriesArchesProps> = ({
             >
               {/* Envelope Shape */}
               <div
-                className={`relative w-full h-[250px] sm:h-[290px] rounded-b-2xl transition-transform duration-500 group-hover:-translate-y-2 shadow-md flex items-end justify-center pb-20 sm:pb-24 overflow-visible ${
-                  isDarkMode ? 'bg-[#3b4737]' : 'bg-[#8b9a82]/90'
-                }`}
+                className="relative w-full h-[270px] sm:h-[315px] rounded-b-2xl transition-transform duration-500 group-hover:-translate-y-2 shadow-md flex items-end justify-center pb-20 sm:pb-24 overflow-visible bg-cover bg-center"
+                style={{ backgroundImage: "url('/background-service.jpg')" }}
               >
+                {/* Subtle overlay to keep text readable while preserving the photo */}
+                <div className="absolute inset-0 rounded-b-2xl bg-black/25 pointer-events-none" />
                 {/* Envelope Flap */}
                 <div
-                  className={`absolute -top-px left-0 w-full h-[110px] sm:h-[130px] ${
-                    isDarkMode ? 'bg-[#3b4737]' : 'bg-[#8b9a82]/90'
-                  }`}
-                  style={{ clipPath: 'polygon(0 0, 50% 78%, 100% 0)' }}
-                />
+                  className="absolute -top-px left-0 w-full h-[120px] sm:h-[140px] bg-cover bg-center"
+                  style={{
+                    clipPath: 'polygon(0 0, 50% 78%, 100% 0)',
+                    backgroundImage: "url('/background-service.jpg')",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/40 pointer-events-none" style={{ clipPath: 'polygon(0 0, 50% 78%, 100% 0)' }} />
+                </div>
                 <img
                   src={cat.image}
                   alt={cat.title}
                   referrerPolicy="no-referrer"
-                  className="relative z-[3] h-[170px] sm:h-[195px] aspect-[3/4] object-cover border-4 sm:border-[6px] border-white shadow-lg -rotate-3 group-hover:rotate-0 transition-transform duration-500 mb-8 sm:mb-10"
+                  className="relative z-[3] h-[190px] sm:h-[215px] aspect-[3/4] object-cover border-4 sm:border-[6px] border-white shadow-lg -rotate-3 group-hover:rotate-0 transition-transform duration-500 mb-8 sm:mb-10"
                 />
-                <div className="absolute bottom-5 left-3 right-3 text-white z-[3] font-serif-main text-lg sm:text-xl leading-tight">
+                <div className="absolute bottom-5 left-3 right-3 text-white z-[4] font-serif-main text-lg sm:text-xl leading-tight drop-shadow-md">
                   {cat.title}
                 </div>
               </div>
