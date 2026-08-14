@@ -153,6 +153,24 @@ export const PhotoLightboxModal: React.FC<PhotoLightboxModalProps> = ({
               {story.description}
             </p>
 
+            {story.reception && (
+              <p
+                className={`text-xs sm:text-sm leading-relaxed ${
+                  isDarkMode ? 'text-[#b5b0a5]' : 'text-[#5a5750]'
+                }`}
+              >
+                Réception: {story.reception.name}{' '}
+                <a
+                  href={story.reception.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#c8c0f5] hover:underline"
+                >
+                  visiter
+                </a>
+              </p>
+            )}
+
             <div
               className={`pt-4 border-t flex gap-3 ${
                 isDarkMode ? 'border-[#38332c]' : 'border-[#e8e4dc]'

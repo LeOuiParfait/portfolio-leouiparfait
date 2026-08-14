@@ -168,13 +168,13 @@ export const STORIES: StoryItem[] = [
     title: 'Manon et Alex',
     coupleName: 'Manon et Alex',
     date: 'MARIAGE RÉALISÉ',
-    location: 'Paris & Île-de-France',
+    location: 'Corse',
     image: '',
     video: '/Manon%20et%20alex/444763_teaser-romain-et-eulalie-3-177994541982927.mp4',
     gallery: [
     ],
     category: 'mariage',
-    description: 'Mariage de Manon et Alex à Paris & Île-de-France.',
+    description: 'Mariage de Manon et Alex à Corse.',
   },
   {
     id: 'margaux-et-carl',
@@ -262,6 +262,7 @@ export const STORIES: StoryItem[] = [
     ],
     category: 'mariage',
     description: 'Romain Le Oui Parfait Vidéo: 21 grammes Production',
+    reception: { name: 'Le Jardin d\'Alya', url: 'https://www.mariages.net/salle-mariage/le-jardin-d-alya--e290082' },
   },
   {
     id: 'david-charlotte',
@@ -316,6 +317,7 @@ export const STORIES: StoryItem[] = [
     ],
     category: 'mariage',
     description: 'Vidéo: 21 grammes Production Réception: Salons Hoche',
+    reception: { name: 'Salons Hoche', url: 'https://www.salons-hoche.fr/' },
   },
   {
     id: 'gwendolyn-jérôme',
@@ -361,6 +363,7 @@ export const STORIES: StoryItem[] = [
     ],
     category: 'mariage',
     description: 'Photo: Romain Le Oui Parfait Réception: Château d\'Aubry du Hainaut',
+    reception: { name: 'Château d\'Aubry du Hainaut', url: 'https://www.chateau-aubry.com/' },
   },
   {
     id: 'julia-christian',
@@ -439,6 +442,7 @@ export const STORIES: StoryItem[] = [
     ],
     category: 'mariage',
     description: 'Photo: Romain Le Oui Parfait Réception: Château de la Brulaire',
+    reception: { name: 'Château de la Brulaire', url: 'https://www.chateaubouffemont.com/fr/weddings-and-engagements?utm_source=google&utm_medium=cpc&utm_campaign=fr_idf_venue&utm_content=lieu&utm_term=domaine%20mariage&campaign_type=search&gad_source=1&gad_campaignid=22614873973&gbraid=0AAAAADfsE0N8Xiy_UsReOSyPRE-9A0Uci&gclid=CjwKCAjws_DTBhB_EiwAXZknGY9pQFoRw_WjBYaENgepQjMg9bssu2EntqAzPR6d0xjoLcsESNudFRoC4bYQAvD_BwE' },
   },
   {
     id: 'justine-jérôme',
@@ -489,6 +493,7 @@ export const STORIES: StoryItem[] = [
     ],
     category: 'mariage',
     description: 'Photo: Romain Le Oui Parfait Réception: G Beach Sunset',
+    reception: { name: 'G Beach Sunset', url: 'https://www.mariages.net/restaurant-mariage/g-beach-sunset--e155622?cmp=ADW-SEM-PMAX-VENUES-REST&utm_source=google&utm_medium=paid-search&utm_campaign=VENUES-Pmax-B2C-Marketplace&utm_content=performance_cpm_search-ad_na_na&gclid=CjwKCAjws_DTBhB_EiwAXZknGZ4GDN3R28gGplgWiPyAYHrlNdBhyJtXiKvuE1je2g-jnhyd8EdBLBoC-JYQAvD_BwE' },
   },
 ];
 

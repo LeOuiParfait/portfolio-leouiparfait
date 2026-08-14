@@ -9,6 +9,7 @@ export interface StoryItem {
   gallery?: string[];
   category: 'mariage' | 'elopement' | 'engagement';
   description: string;
+  reception?: { name: string; url: string };
 }
 
 export interface TestimonialItem {
