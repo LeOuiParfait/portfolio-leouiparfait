@@ -112,7 +112,7 @@ Particularité : véritable showman, il ne se contente pas de mixer : il anime, 
 
     videos: {
       mix: {
-        src: '/dj/dj jojo.mp4',
+        poster: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=90',
         label: 'En action',
         title: 'Le mix en live',
       },
