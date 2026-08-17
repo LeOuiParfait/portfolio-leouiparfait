@@ -1,30 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { LoveAndLifeSection } from './components/LoveAndLifeSection';
-import { AboutSection } from './components/AboutSection';
-import { WeddingGuideBanner } from './components/WeddingGuideBanner';
-import { ProcessSection } from './components/ProcessSection';
-import { CategoriesArches } from './components/CategoriesArches';
-import { CreativeProcessCollage } from './components/CreativeProcessCollage';
-import { TestimonialsStampGrid } from './components/TestimonialsStampGrid';
-import { NosLieux } from './components/NosLieux';
-import { FooterBanner } from './components/FooterBanner';
 import { ContactModal } from './components/ContactModal';
 import { GuideDownloadModal } from './components/GuideDownloadModal';
 import { PhotoLightboxModal } from './components/PhotoLightboxModal';
-import { StoryItem, ServiceCategory } from './types';
+import { HomePage } from './pages/HomePage';
+import { DjsPage } from './pages/DjsPage';
+import { TraiteurPage } from './pages/TraiteurPage';
+import { StoryItem } from './types';
 
-export default function App() {
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+function AppShell() {
   const [isDarkMode] = useState(true);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isGuideOpen, setIsGuideOpen] = useState(false);
   const [selectedStory, setSelectedStory] = useState<StoryItem | null>(null);
-
-  const handleSelectCategory = (category: ServiceCategory) => {
-    // Open contact form pre-filled or show story lightbox
-    setIsContactOpen(true);
-  };
 
   return (
     <div
@@ -34,71 +33,44 @@ export default function App() {
           : 'bg-[#faf8f5] text-[#2c2b29]'
       }`}
     >
-      {/* Navigation */}
+      <ScrollToTop />
       <Navbar
         isDarkMode={isDarkMode}
         onOpenContact={() => setIsContactOpen(true)}
       />
 
-      {/* Main Content Layouts (In exact order of design photos) */}
-      <main>
-        {/* 1. Hero Section */}
-        <Hero
-          isDarkMode={isDarkMode}
-          onOpenContact={() => setIsContactOpen(true)}
-          onOpenGuide={() => setIsGuideOpen(true)}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              isDarkMode={isDarkMode}
+              onOpenContact={() => setIsContactOpen(true)}
+              onOpenGuide={() => setIsGuideOpen(true)}
+              onSelectStory={(story) => setSelectedStory(story)}
+            />
+          }
         />
-
-        {/* 2. Love + Life Stories Slider */}
-        <LoveAndLifeSection
-          isDarkMode={isDarkMode}
-          onSelectStory={(story) => setSelectedStory(story)}
+        <Route
+          path="/nos-djs"
+          element={
+            <DjsPage
+              isDarkMode={isDarkMode}
+              onOpenContact={() => setIsContactOpen(true)}
+            />
+          }
         />
-
-        {/* 3. Nos Lieux Bento */}
-        <NosLieux />
-
-        {/* 4. About Me Section & Vendor Logos */}
-        <AboutSection
-          isDarkMode={isDarkMode}
-          onOpenContact={() => setIsContactOpen(true)}
+        <Route
+          path="/traiteur"
+          element={
+            <TraiteurPage
+              isDarkMode={isDarkMode}
+              onOpenContact={() => setIsContactOpen(true)}
+            />
+          }
         />
+      </Routes>
 
-        {/* 5. Feeling Overwhelmed / Wedding Guide Banner */}
-        <WeddingGuideBanner
-          isDarkMode={isDarkMode}
-          onOpenGuide={() => setIsGuideOpen(true)}
-        />
-
-        {/* 6. Process "How we make magic together" */}
-        <ProcessSection
-          isDarkMode={isDarkMode}
-          onOpenContact={() => setIsContactOpen(true)}
-        />
-
-        {/* 7. Service Categories Arches */}
-        <CategoriesArches
-          isDarkMode={isDarkMode}
-          onSelectCategory={handleSelectCategory}
-        />
-
-        {/* 8. Creative Process Collage */}
-        <CreativeProcessCollage
-          isDarkMode={isDarkMode}
-          onOpenContact={() => setIsContactOpen(true)}
-        />
-
-        {/* 9. Testimonials Stamp Grid */}
-        <TestimonialsStampGrid isDarkMode={isDarkMode} />
-
-        {/* 10. Dark Floral Footer Banner */}
-        <FooterBanner
-          isDarkMode={isDarkMode}
-          onOpenContact={() => setIsContactOpen(true)}
-        />
-      </main>
-
-      {/* Interactive Modals */}
       <ContactModal
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
@@ -118,5 +90,13 @@ export default function App() {
         isDarkMode={isDarkMode}
       />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppShell />
+    </BrowserRouter>
   );
 }

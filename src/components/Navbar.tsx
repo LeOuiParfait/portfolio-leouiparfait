@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Instagram, Facebook, Menu as MenuIcon, X } from 'lucide-react';
 import gsap from 'gsap';
 
@@ -14,6 +15,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     if (isMenuOpen && menuRef.current) {
@@ -33,13 +36,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   }, [isMenuOpen]);
 
   const navLinks = [
-    { label: 'Accueil', href: '#hero' },
-    { label: 'Portfolio', href: '#stories' },
-    { label: 'Lieux', href: '#lieux' },
-    { label: 'À Propos', href: '#about' },
-    { label: 'Tarifs & Prestations', href: '#services' },
-    { label: 'Notre Processus', href: '#process' },
-    { label: 'Avis des Couples', href: '#testimonials' },
+    { label: 'Accueil', href: isHomePage ? '#hero' : '/#hero' },
+    { label: 'Portfolio', href: isHomePage ? '#stories' : '/#stories' },
+    { label: 'Lieux', href: isHomePage ? '#lieux' : '/#lieux' },
+    { label: 'À Propos', href: isHomePage ? '#about' : '/#about' },
+    { label: 'Tarifs & Prestations', href: isHomePage ? '#services' : '/#services' },
+    { label: 'Notre Processus', href: isHomePage ? '#process' : '/#process' },
+    { label: 'Avis des Couples', href: isHomePage ? '#testimonials' : '/#testimonials' },
   ];
 
   return (
@@ -84,18 +87,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Logo — always visible, top priority on mobile */}
-          <a href="#hero" className="text-center group shrink-0">
+          <Link to="/" className="text-center group shrink-0">
             <img
               src="/logo-horizontal.png"
               alt="Le Oui Parfait"
               className="h-[120px] sm:h-[168px] w-auto max-w-none object-contain transition-transform group-hover:scale-105"
             />
-          </a>
+          </Link>
 
           {/* Right Action Buttons — compact on mobile, menu always reachable */}
           <div className="flex items-center space-x-1.5 sm:space-x-3">
             <a
-              href="#services"
+              href={isHomePage ? '#services' : '/#services'}
               className={`hidden sm:inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-sans-clean font-medium active:scale-95 transition-all shadow-sm ${
                 isDarkMode
                   ? 'bg-[#c8c0f5] text-[#141311] hover:bg-[#e8e4dc]'
