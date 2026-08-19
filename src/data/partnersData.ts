@@ -49,7 +49,7 @@ Parce qu'un repas de mariage ne doit pas simplement être bon.
     { id: 'menu-12', name: 'Wok de légumes à la coriandre', image: '/shooting la saveur etoilee/nos plats 12.jpg', description: 'Brochette de gambas marinée au saté, sauce vin blanc' },
     { id: 'menu-13', name: 'Minestrone de légumes du soleil', image: '/shooting la saveur etoilee/nos plats 13.jpg', description: 'Filet de rouget plancha, crème balsamique' },
     { id: 'menu-14', name: 'Minestrone de légumes du soleil', image: '/shooting la saveur etoilee/nos plats 14.jpg', description: 'Filet de rouget plancha, crème balsamique' },
-    { id: 'menu-15', name: 'Magret de canard', image: '/shooting la saveur etoilee/nos plats 15.jpg', description: "Sauce à l'orange, poêlée forestière, suprême de pêche fondante au miel" },
+    { id: 'menu-15', name: 'Écrasé de pomme de terre aux champignons', image: '/shooting la saveur etoilee/nos plats 15.jpg', description: 'Suprême de pintade pané aux cornflakes curry et herbes de Provence, sauce morille' },
     { id: 'menu-16', name: 'Magret de canard', image: '/shooting la saveur etoilee/nos plats 16.jpg', description: "Sauce à l'orange, poêlée forestière, suprême de pêche fondante au miel" },
     { id: 'menu-17', name: 'Magret de canard', image: '/shooting la saveur etoilee/nos plats 17.jpg', description: "Sauce à l'orange, poêlée forestière, suprême de pêche fondante au miel" },
     { id: 'menu-18', name: 'Magret de canard', image: '/shooting la saveur etoilee/nos plats 18.jpg', description: "Sauce à l'orange, poêlée forestière, suprême de pêche fondante au miel" },
