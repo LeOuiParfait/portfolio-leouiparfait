@@ -58,7 +58,7 @@ Parce qu'un repas de mariage ne doit pas simplement être bon.
     { id: 'menu-21', name: 'Magret de canard', image: '/shooting la saveur etoilee/nos plats 21.jpg', description: "Sauce à l'orange, poêlée forestière, suprême de pêche fondante au miel" },
     { id: 'menu-22', name: 'Filet de bar rôti', image: '/shooting la saveur etoilee/nos plats 22.jpg', description: "Condiment vierge, écrasée de pomme de terre vitelotte à l'huile de truffe" },
     { id: 'menu-23', name: 'Filet de bar rôti', image: '/shooting la saveur etoilee/nos plats 23.jpg', description: "Condiment vierge, écrasée de pomme de terre vitelotte à l'huile de truffe" },
-    { id: 'menu-24', name: 'Tartelette fraise', image: '/shooting la saveur etoilee/nos plats 24.jpg', description: 'Crème diplomate saveur fève de tonka et vanille de Madagascar' },
+    { id: 'menu-24', name: 'Filet de bar rôti', image: '/shooting la saveur etoilee/nos plats 24.jpg', description: "Condiment vierge, écrasée de pomme de terre vitelotte à l'huile de truffe" },
     { id: 'menu-25', name: 'Le tout fraise', image: '/shooting la saveur etoilee/nos plats 25.jpg', description: 'Tartelette fraise, sorbet fraise basilic, soupe de fraise à la menthe' },
     { id: 'menu-26', name: 'Le tout fraise', image: '/shooting la saveur etoilee/nos plats 26.jpg', description: 'Tartelette fraise, sorbet fraise basilic, soupe de fraise à la menthe' },
     { id: 'menu-27', name: 'Le tout fraise', image: '/shooting la saveur etoilee/nos plats 27.jpg', description: 'Tartelette fraise, sorbet fraise basilic, soupe de fraise à la menthe' },
