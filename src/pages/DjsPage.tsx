@@ -13,7 +13,7 @@ import { DJ_PARTNERS } from '../data/partnersData';
 
 const DJ_HERO_IMAGES = {
   collage1: '/dj/violoniste.jpg',
-  collage2: '/dj/ambiance couple.png',
+  collage2: '/dj/ambiance couple.jpg',
   collage3: '/dj/saxophoniste.jpg',
 };
 
