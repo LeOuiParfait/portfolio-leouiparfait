@@ -33,7 +33,7 @@ Parce qu'un repas de mariage ne doit pas simplement être bon.
   heroImage:
     'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=85',
   chefImage:
-    '/notre equipe traiteur (2).png',
+    '/chef traiteur (2).png',
   dishes: [
     { id: 'menu-1', name: 'Menu', image: '/shooting la saveur etoilee/nos plats (1).jpg', description: 'Amuse-bouche végétal, saumon et légumes croquants / Volaille farcie / Plateau de fromages / Vacherin glacé' },
     { id: 'menu-2', name: 'Menu', image: '/shooting la saveur etoilee/nos plats (2).jpg', description: 'Carpaccio de bœuf / Filet de dorade, risotto / Assiette de fromages / Fondant au chocolat' },
@@ -132,6 +132,7 @@ Particularité : véritable showman, il ne se contente pas de mixer : il anime, 
     videos: {
       mix: {
         src: '/dj/dj jojo.mp4',
+        poster: '/dj/dj jojo.png',
         label: 'En action',
         title: 'Le mix en live',
       },

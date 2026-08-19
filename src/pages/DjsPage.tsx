@@ -14,7 +14,7 @@ import { DJ_PARTNERS } from '../data/partnersData';
 const DJ_HERO_IMAGES = {
   collage1: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=85',
   collage2: 'https://images.unsplash.com/photo-1756197256596-6d89054b760a?auto=format&fit=crop&w=600&q=85',
-  collage3: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=85',
+  collage3: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=85',
 };
 
 interface DjsPageProps {
@@ -161,9 +161,9 @@ export const DjsPage: React.FC<DjsPageProps> = ({
                 }`}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1764269720571-cc09b086c2a4?auto=format&fit=crop&w=800&q=85"
+                  src="/dj/anat-landa-2162599192-38446274.jpg"
                   alt="La magie du dancefloor"
-                  className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />
@@ -257,7 +257,7 @@ export const DjsPage: React.FC<DjsPageProps> = ({
                 }`}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=85"
+                  src="/dj/L'effervescence du oui.png"
                   alt="Show lumineux"
                   className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                   loading="lazy"

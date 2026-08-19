@@ -10,11 +10,11 @@ import { TRAITEUR_PARTNER } from '../data/partnersData';
 import gsap from 'gsap';
 
 const TRAITEUR_HERO_IMAGES = {
-  left: '/notre equipe traiteur (1).png',
-  right: '/notre equipe traiteur (5).png',
-  collage1: 'verine le oui parfait.png',
-  collage2: '/notre equipe traiteur (4).png',
-  collage3: 'pièce montée.png',
+  left: '/chef traiteur (3).png',
+  right: '/chef traiteur (5).png',
+  collage1: '/plats (1).png',
+  collage2: '/chef traiteur (4).png',
+  collage3: '/plats (2).png',
 };
  interface TraiteurPageProps {
   isDarkMode?: boolean;
@@ -226,15 +226,19 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
                   />
                 </Reveal>
 
-                <p
-                  className={`mt-8 sm:mt-10 text-sm sm:text-base lg:text-lg font-sans-clean max-w-xl mx-auto leading-relaxed ${
+                <div
+                  className={`mt-8 sm:mt-10 space-y-5 text-sm sm:text-base lg:text-lg font-sans-clean max-w-xl mx-auto leading-relaxed ${
                     isDarkMode ? 'text-[#b5b0a5]' : 'text-[#5a5750]'
                   }`}
                 >
-                  Menus sur-mesure, produits de saison et attention portée à chaque détail . Notre équipe traiteur imagine une cuisine à votre image, pensée pour accompagner votre mariage et faire de chaque repas un véritable moment de partage.
-                </p>
+                  <p>Une cuisine de mariage signée Le Oui Parfait</p>
+                  <p>
+                    Chaque mariage a son histoire, son ambiance et ses envies.
+                  </p>
+                </div>
               </div>
 
+              {/* Image droite */}
               <div className="lg:col-span-3 flex justify-center lg:justify-end order-3">
                 <div
                   ref={rightCardRef}
@@ -278,19 +282,15 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
                     isDarkMode ? 'text-[#b5b0a5]' : 'text-[#5a5750]'
                   }`}
                 >
-                  Chaque mariage a son histoire, son ambiance et ses envies. Ensemble, imaginons une cuisine qui vous ressemble et qui laissera à vos invités le souvenir d’un beau moment partagé.
+                  Chaque mariage a son histoire, son ambiance et ses envies. <br /> <br />Ensemble, imaginons une cuisine qui vous ressemble et qui laissera à vos invités le souvenir d'un beau moment partagé.
                 </p>
-                <button
-                  type="button"
-                  onClick={onOpenContact}
-                  className={`inline-flex px-5 sm:px-7 py-2 sm:py-2.5 rounded-full font-sans-clean font-medium text-xs sm:text-sm transition-all shadow-md active:scale-95 ${
-                    isDarkMode
-                      ? 'bg-[#c8c0f5] text-[#141311] hover:bg-[#e8e4dc]'
-                      : 'bg-[#8b9a82] text-white hover:bg-[#74836b]'
+                <p
+                  className={`font-sans-clean text-xs sm:text-sm italic leading-relaxed max-w-[260px] ${
+                    isDarkMode ? 'text-[#b5b0a5]' : 'text-[#5a5750]'
                   }`}
                 >
-                  Demander un devis traiteur
-                </button>
+                  Une cuisine généreuse, élégante et personnalisée, conçue pour sublimer votre journée.
+                </p>
               </div>
             </Reveal>
           </div>
