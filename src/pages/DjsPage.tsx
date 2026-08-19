@@ -12,9 +12,9 @@ import { FloatingPartnerMenu } from '../components/FloatingPartnerMenu';
 import { DJ_PARTNERS } from '../data/partnersData';
 
 const DJ_HERO_IMAGES = {
-  collage1: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=85',
-  collage2: 'https://images.unsplash.com/photo-1756197256596-6d89054b760a?auto=format&fit=crop&w=600&q=85',
-  collage3: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=85',
+  collage1: '/dj/violoniste.jpg',
+  collage2: '/dj/ambiance couple.png',
+  collage3: '/dj/saxophoniste.jpg',
 };
 
 interface DjsPageProps {
