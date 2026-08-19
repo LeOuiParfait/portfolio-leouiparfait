@@ -13,16 +13,87 @@ interface DjShowcaseProps {
   showDivider?: boolean;
 }
 
+const renderPink = (text: string) => {
+  const parts: React.ReactNode[] = [];
+  let remaining = text;
+  let key = 0;
+  while (remaining.length > 0) {
+    const start = remaining.indexOf('{{');
+    if (start === -1) {
+      parts.push(<React.Fragment key={key++}>{remaining}</React.Fragment>);
+      break;
+    }
+    if (start > 0) {
+      parts.push(<React.Fragment key={key++}>{remaining.slice(0, start)}</React.Fragment>);
+      remaining = remaining.slice(start);
+    }
+    const end = remaining.indexOf('}}');
+    if (end === -1) {
+      parts.push(<React.Fragment key={key++}>{remaining}</React.Fragment>);
+      break;
+    }
+    parts.push(
+      <span key={key++} className="text-[#f4a8bf] font-semibold">
+        {remaining.slice(2, end)}
+      </span>
+    );
+    remaining = remaining.slice(end + 2);
+  }
+  return parts;
+};
+
 const renderDescription = (text: string) => {
-  return text.split('**').map((part, i) =>
-    i % 2 === 1 ? (
-      <strong key={i} className="font-semibold">
-        {part}
-      </strong>
-    ) : (
-      part
-    )
-  );
+  const parts: React.ReactNode[] = [];
+  let remaining = text;
+  let key = 0;
+
+  while (remaining.length > 0) {
+    const boldStart = remaining.indexOf('**');
+    const pinkStart = remaining.indexOf('{{');
+
+    if (boldStart === -1 && pinkStart === -1) {
+      parts.push(<React.Fragment key={key++}>{remaining}</React.Fragment>);
+      break;
+    }
+
+    const next =
+      pinkStart !== -1 && (boldStart === -1 || pinkStart < boldStart)
+        ? { type: 'pink' as const, index: pinkStart }
+        : { type: 'bold' as const, index: boldStart };
+
+    if (next.index > 0) {
+      parts.push(<React.Fragment key={key++}>{remaining.slice(0, next.index)}</React.Fragment>);
+      remaining = remaining.slice(next.index);
+    }
+
+    if (next.type === 'bold') {
+      const end = remaining.indexOf('**', 2);
+      if (end === -1) {
+        parts.push(<React.Fragment key={key++}>{remaining}</React.Fragment>);
+        break;
+      }
+      parts.push(
+        <strong key={key++} className="font-semibold">
+          {renderPink(remaining.slice(2, end))}
+        </strong>
+      );
+      remaining = remaining.slice(end + 2);
+    } else {
+      const end = remaining.indexOf('}}');
+      if (end === -1) {
+        parts.push(<React.Fragment key={key++}>{remaining}</React.Fragment>);
+        break;
+      }
+      parts.push(
+        <span key={key++} className="text-[#f4a8bf] font-semibold">
+          {remaining.slice(2, end)}
+        </span>
+      );
+      remaining = remaining.slice(end + 2);
+    }
+  }
+
+  return parts;
 };
 
 export const DjShowcase: React.FC<DjShowcaseProps> = ({

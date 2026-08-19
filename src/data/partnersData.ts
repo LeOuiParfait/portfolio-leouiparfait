@@ -6,17 +6,34 @@ export const TRAITEUR_PARTNER: TraiteurPartner = {
   subtitle: 'Kathy PDG · Béatrice Top chef étoilée · Hata formée par les tops chefs',
   intro: '',
   story:
-    `Une cuisine portée par des femmes de caractère
+    `## Une cuisine portée par des femmes de caractère
 
-Un mariage, ce n’est pas seulement une belle table. C’est une succession de moments que l’on partage, de plats que l’on découvre et de souvenirs qui restent.
+Un mariage ne se résume pas à une belle table. C'est une succession de moments, de saveurs, d'émotions et de souvenirs que l'on partage. Chez **Le Oui Parfait**, nous avons souhaité aller plus loin en imaginant une expérience culinaire pleinement intégrée à notre vision du mariage.
 
-Chez Le Oui Parfait, cette expérience repose sur une équipe qui connaît la restauration de l’intérieur. À sa tête, Kathy, PDG de Le Oui Parfait, imagine chaque réception comme une expérience à part entière. À ses côtés, Béatrice, entrepreneure et dirigeante de plusieurs restaurants en Europe, apporte son regard, son expérience du terrain et cette exigence acquise au fil des années. Hata complète cette équipe, forte d’une formation auprès de grands chefs et d’un véritable savoir-faire en cuisine.
+À la tête de cette aventure, **Kathy, Présidente de Le Oui Parfait**, imagine chaque réception dans sa globalité, avec la même exigence portée à la décoration, à l'organisation, au service et à l'expérience des invités.
 
-C’est cette vision qu’elles mettent au service des mariages Le Oui Parfait : une cuisine généreuse, soignée et personnelle, pensée pour accompagner chaque moment de la réception et laisser aux invités bien plus qu’un simple souvenir de menu.`,
+À ses côtés, **Béatrice apporte plus de vingt ans d'expérience dans l'univers de la restauration et de la gastronomie**. Son parcours débute en 2002 au **Pavillon de l'Élysée**, avant de se poursuivre chez **Qualité & Co**, puis au **restaurant Dior à Paris**, où elle perfectionne les fondamentaux de la cuisine haut de gamme et du service d'exception.
+
+En **2019**, son engagement, son professionnalisme et son savoir-faire sont récompensés par son **intronisation au sein des Toques Blanches Internationales**, distinction honorifique venant saluer son parcours et son attachement à une gastronomie exigeante et généreuse.
+
+En **2025 et 2026**, elle accompagne également la création de la carte et l'ouverture du [[https://lescale-restaurant-gp.fr/|restaurant L'Escale aux Abymes]], en qualité de **cheffe de cuisine**. Une expérience qui vient renforcer son expertise dans la conception culinaire, l'organisation d'une brigade et la mise en place opérationnelle d'un établissement.
+
+**Hata complète cette équipe**, avec une formation réalisée auprès de chefs reconnus et un véritable savoir-faire en cuisine. Ensemble, elles associent expérience du terrain, créativité, maîtrise technique et sens du détail pour imaginer des réceptions à la hauteur de chaque événement.
+
+### Le Traiteur Parfait, par Le Oui Parfait
+
+C'est de cette complémentarité qu'est né **Le Traiteur Parfait**, le nouveau service traiteur de **Le Oui Parfait**.
+
+Une offre pensée spécialement pour nos mariages et nos événements, avec une ambition simple : proposer une cuisine **généreuse, élégante et personnalisée**, tout en conservant la qualité d'organisation et d'accompagnement qui fait l'ADN de Le Oui Parfait.
+
+De la création du menu à sa présentation, du choix des produits à l'organisation du service, chaque détail est pensé en cohérence avec l'univers de votre réception.
+
+Parce qu'un repas de mariage ne doit pas simplement être bon.
+**Il doit faire partie de l'histoire de votre journée.**`,
   heroImage:
     'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=85',
   chefImage:
-    '/notre equipe traiteur (4).jpeg',
+    '/notre equipe traiteur (2).png',
   dishes: [
     { id: 'menu-1', name: 'Menu', image: '/shooting la saveur etoilee/nos plats (1).jpg', description: 'Amuse-bouche végétal, saumon et légumes croquants / Volaille farcie / Plateau de fromages / Vacherin glacé' },
     { id: 'menu-2', name: 'Menu', image: '/shooting la saveur etoilee/nos plats (2).jpg', description: 'Carpaccio de bœuf / Filet de dorade, risotto / Assiette de fromages / Fondant au chocolat' },
@@ -73,7 +90,7 @@ export const DJ_PARTNERS: DjPartner[] = [
     name: 'DJ Edner - Double H Dijay',
     tagline: "L'énergie certifiée Le Oui Parfait !",
     description:
-      `DJ Edner, aka Double H Dijay, c'est l'énergie certifiée Le Oui Parfait ! Spécialiste des mariages multiculturels, il mixe tous les styles et transforme chaque soirée en véritable show. Son, lumières, fumée, spots, accessoires et animations : tout est inclus. Ambiance garantie et dancefloor en feu !
+      `DJ Edner, aka {{Double H Dijay}}, c'est l'énergie certifiée Le Oui Parfait ! Spécialiste des mariages multiculturels, il mixe tous les styles et transforme chaque soirée en véritable show. Son, lumières, fumée, spots, accessoires et animations : tout est inclus. Ambiance garantie et dancefloor en feu !
 
 Particularité : véritable showman, il ne se contente pas de mixer : il anime, fait participer les invités et crée une vraie interaction avec le public.`,
     rating: 5,
@@ -105,14 +122,16 @@ Particularité : véritable showman, il ne se contente pas de mixer : il anime, 
     name: 'DJ Jojo',
     tagline: "La bonne humeur en rythme",
     description:
-      `Jojo apporte une énergie communicative et un sens aigu de la fête. Toujours à l’écoute, il enchaîne les ambiances pour que chaque instant de la soirée trouve son tempo. C’est l’allié qui transforme les soirées en moments inoubliables.`,
+      `**DJ Jojo, c'est l'art de sentir la salle et de faire monter l'ambiance au bon moment !** À l'écoute des mariés et de leurs envies, il construit une programmation sur mesure et navigue avec fluidité entre les styles pour réunir toutes les générations sur le dancefloor. Du cocktail aux premières notes de la soirée jusqu'aux derniers morceaux de la nuit, il crée une ambiance qui évolue, surprend et fait vibrer vos invités.
+
+**Particularité :** son véritable atout, c'est sa capacité à lire le public et à s'adapter en direct. Pop, funk, disco, variété, house, électro ou musiques du monde : DJ Jojo trouve le bon morceau au bon moment pour créer ces instants où toute la salle se retrouve sur la piste… et où personne n'a envie que la soirée s'arrête.`,
     rating: 5,
 
     mainImage: '/dj/dj jojo.png',
 
     videos: {
       mix: {
-        poster: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=90',
+        src: '/dj/dj jojo.mp4',
         label: 'En action',
         title: 'Le mix en live',
       },
@@ -127,14 +146,17 @@ Particularité : véritable showman, il ne se contente pas de mixer : il anime, 
 
   {
     id: 'dj-mathieu',
-    name: 'DJ Mathieu',
+    name: 'Mast-er-Sono',
     tagline: "L'énergie en partage",
     description:
-      "Mathieu marie la technique à l'instinct. Des playlists affutées aux transitions irrésistibles, il donne le ton dès le premier morceau et embarque chaque génération sur la piste de danse. Son art ? Lire les regards, sentir l'instant, et le sublimer.",
+      `** Patrick aka {{Mast-er-Sono}}, c'est bien plus qu'un DJ : c'est celui qui donne le rythme à l'une des plus belles soirées de votre vie.** Des premières émotions jusqu'aux derniers pas de danse, il crée une ambiance sur mesure, pensée pour vous, votre histoire et vos invités. Grâce à une préparation personnalisée en amont, chaque morceau, chaque lumière et chaque temps fort trouve sa place pour faire monter l'émotion et transformer votre réception en un souvenir inoubliable.
+
+**Particularité :** à l'écoute de vos envies et de votre univers musical, il construit avec vous une véritable expérience de soirée. Sonorisation, éclairage et animation sont pensés dans les moindres détails pour faire vibrer toutes les générations, remplir le dancefloor et offrir à vos invités ce moment où plus personne n'a envie que la soirée s'arrête.`,
     rating: 5,
+    website: 'https://www.mariages.net/musique-mariage/mast-er-sono--e148805',
 
     mainImage:
-      'https://images.unsplash.com/photo-1756995266739-707180b01418?auto=format&fit=crop&w=1200&q=90',
+      '/dj/dj patrick.png',
 
     videos: {
       mix: {
@@ -146,9 +168,9 @@ Particularité : véritable showman, il ne se contente pas de mixer : il anime, 
       },
 
       show: {
-        src: 'https://videos.pexels.com/video-files/5848544/5848544-uhd_2560_1440_25fps.mp4',
+        src: '/dj/patrick show.mp4',
         poster:
-          'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=90',
+          '',
         label: 'Spectacle',
         title: 'Le show lumineux',
       },

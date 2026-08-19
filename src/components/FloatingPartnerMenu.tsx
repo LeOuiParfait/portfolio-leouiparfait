@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Disc3, UtensilsCrossed, X } from 'lucide-react';
+import { Disc3, UtensilsCrossed, Sparkles, Music, X } from 'lucide-react';
 import gsap from 'gsap';
 
 interface FloatingPartnerMenuProps {
@@ -42,6 +42,18 @@ export const FloatingPartnerMenu: React.FC<FloatingPartnerMenuProps> = ({
       label: 'Traiteur',
       icon: UtensilsCrossed,
       description: 'Cuisine d\'exception',
+    },
+    {
+      to: '/animation',
+      label: 'Animation Enfants',
+      icon: Sparkles,
+      description: 'Oui Oui Kids × Maison des 4A',
+    },
+    {
+      to: '/flamenco',
+      label: 'Flamenco Live',
+      icon: Music,
+      description: 'Performance scénique & guitare live',
     },
   ];
 

@@ -7,6 +7,8 @@ import { PhotoLightboxModal } from './components/PhotoLightboxModal';
 import { HomePage } from './pages/HomePage';
 import { DjsPage } from './pages/DjsPage';
 import { TraiteurPage } from './pages/TraiteurPage';
+import { AnimationPage } from './pages/AnimationPage';
+import { FlamencoPage } from './pages/FlamencoPage';
 import { StoryItem } from './types';
 
 function ScrollToTop() {
@@ -64,6 +66,24 @@ function AppShell() {
           path="/traiteur"
           element={
             <TraiteurPage
+              isDarkMode={isDarkMode}
+              onOpenContact={() => setIsContactOpen(true)}
+            />
+          }
+        />
+        <Route
+          path="/animation"
+          element={
+            <AnimationPage
+              isDarkMode={isDarkMode}
+              onOpenContact={() => setIsContactOpen(true)}
+            />
+          }
+        />
+        <Route
+          path="/flamenco"
+          element={
+            <FlamencoPage
               isDarkMode={isDarkMode}
               onOpenContact={() => setIsContactOpen(true)}
             />

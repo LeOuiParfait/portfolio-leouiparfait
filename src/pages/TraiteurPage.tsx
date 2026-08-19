@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, ChevronDown, X } from 'lucide-react';
 import { RomanticBackground } from '../components/RomanticBackground';
 import { BowDivider } from '../components/BowDivider';
 import { Reveal } from '../components/Reveal';
@@ -10,14 +10,13 @@ import { TRAITEUR_PARTNER } from '../data/partnersData';
 import gsap from 'gsap';
 
 const TRAITEUR_HERO_IMAGES = {
-  left: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85',
-  right: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=85',
-  collage1: '/notre equipe traiteur (1).jpeg',
-  collage2: '/notre equipe traiteur (2).jpeg',
-  collage3: '/notre equipe traiteur (3).jpeg',
+  left: '/notre equipe traiteur (1).png',
+  right: '/notre equipe traiteur (5).png',
+  collage1: 'verine le oui parfait.png',
+  collage2: '/notre equipe traiteur (4).png',
+  collage3: 'pièce montée.png',
 };
-
-interface TraiteurPageProps {
+ interface TraiteurPageProps {
   isDarkMode?: boolean;
   onOpenContact: () => void;
 }
@@ -28,6 +27,7 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
 }) => {
   const { intro, story, chefImage, dishes } = TRAITEUR_PARTNER;
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [accordionOpen, setAccordionOpen] = useState(false);
 
   const heroRef = useRef<HTMLDivElement>(null);
   const leftCardRef = useRef<HTMLDivElement>(null);
@@ -157,8 +157,8 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
                   >
                     <img
                       src={TRAITEUR_HERO_IMAGES.left}
-                      alt="Table dressée avec soin"
-                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                      alt="Notre Chef coordonnatrice toque blanche et Kathy gérante Le Oui Parfait"
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                       referrerPolicy="no-referrer"
                     />
                   </div>
@@ -167,7 +167,7 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
                       isDarkMode ? 'text-[#e8e4dc]' : 'text-[#5c6954]'
                     }`}
                   >
-                    « L&apos;art de la table »
+                    « Notre Chef coordonnatrice toque blanche & Kathy, gérante Le Oui Parfait »
                   </p>
                 </div>
               </div>
@@ -190,7 +190,7 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
                   les sens et{' '}
                   <span
                     className={`font-script text-4xl sm:text-6xl lg:text-7xl px-1 font-normal inline-block ${
-                      isDarkMode ? 'text-[#c8c0f5]' : 'text-[#78876e]'
+                      isDarkMode ? 'text-[#f4a8bf]' : 'text-[#f4a8bf]'
                     }`}
                   >
                     sublime
@@ -251,7 +251,7 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
                   >
                     <img
                       src={TRAITEUR_HERO_IMAGES.right}
-                      alt="Plat gastronomique"
+                      alt="Béatrice"
                       className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
@@ -261,7 +261,7 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
                       isDarkMode ? 'text-[#e8e4dc]' : 'text-[#5c6954]'
                     }`}
                   >
-                    « Saveurs de saison »
+                    « Béatrice »
                   </p>
                 </div>
               </div>
@@ -319,33 +319,174 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
                     isDarkMode ? 'text-[#e8e4dc]' : 'text-[#5c6954]'
                   }`}
                 >
-                  « Béatrice Top chef étoilée · Hata formée par les tops chefs »
+                  « Béatrice  Toque Blanche et  Hata »
                 </p>
               </div>
             </Reveal>
 
             <Reveal variant="right" className="lg:col-span-7">
-              {intro.trim() &&
-                intro.split('\n\n').map((p, i) => (
-                  <p
-                    key={`intro-${i}`}
-                    className={`text-sm sm:text-base lg:text-lg font-sans-clean leading-relaxed mb-5 ${
-                      isDarkMode ? 'text-[#b5b0a5]' : 'text-[#5a5750]'
-                    }`}
-                  >
-                    {p}
-                  </p>
-                ))}
-              {story.split('\n\n').map((p, i, arr) => (
-                <p
-                  key={`story-${i}`}
-                  className={`text-sm sm:text-base lg:text-lg font-sans-clean leading-relaxed ${
-                    isDarkMode ? 'text-[#e8e4dc]/90' : 'text-[#2c2b29]'
-                  } ${i === arr.length - 1 ? '' : 'mb-5'}`}
-                >
-                  {p}
-                </p>
-              ))}
+              {(() => {
+                const renderFormattedText = (text: string) => {
+                  const parts: React.ReactNode[] = [];
+                  let remaining = text;
+                  let keyCounter = 0;
+
+                  while (remaining.length > 0) {
+                    const boldStart = remaining.indexOf('**');
+                    const linkStart = remaining.indexOf('[[');
+
+                    if (boldStart === -1 && linkStart === -1) {
+                      parts.push(<React.Fragment key={keyCounter++}>{remaining}</React.Fragment>);
+                      break;
+                    }
+
+                    const nextStart =
+                      linkStart !== -1 && (boldStart === -1 || linkStart < boldStart)
+                        ? { type: 'link' as const, index: linkStart }
+                        : { type: 'bold' as const, index: boldStart };
+
+                    if (nextStart.index > 0) {
+                      parts.push(
+                        <React.Fragment key={keyCounter++}>
+                          {remaining.slice(0, nextStart.index)}
+                        </React.Fragment>
+                      );
+                      remaining = remaining.slice(nextStart.index);
+                    }
+
+                    if (nextStart.type === 'bold') {
+                      const boldEnd = remaining.indexOf('**', 2);
+                      if (boldEnd === -1) {
+                        parts.push(<React.Fragment key={keyCounter++}>{remaining}</React.Fragment>);
+                        break;
+                      }
+                      parts.push(
+                        <strong key={keyCounter++} className="font-semibold">
+                          {remaining.slice(2, boldEnd)}
+                        </strong>
+                      );
+                      remaining = remaining.slice(boldEnd + 2);
+                    } else {
+                      const linkEnd = remaining.indexOf(']]');
+                      if (linkEnd === -1) {
+                        parts.push(<React.Fragment key={keyCounter++}>{remaining}</React.Fragment>);
+                        break;
+                      }
+                      const linkContent = remaining.slice(2, linkEnd);
+                      const [url, linkText] = linkContent.split('|');
+                      parts.push(
+                        <a
+                          key={keyCounter++}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`underline underline-offset-4 transition-colors ${
+                            isDarkMode
+                              ? 'text-[#f4a8bf] hover:text-[#e8e4dc]'
+                              : 'text-[#78876e] hover:text-[#5c6954]'
+                          }`}
+                        >
+                          {linkText}
+                        </a>
+                      );
+                      remaining = remaining.slice(linkEnd + 2);
+                    }
+                  }
+
+                  return parts;
+                };
+
+                const sections = story.split(/^### /m);
+                const mainSection = sections[0];
+                const accordionSection = sections.slice(1).join('### ');
+
+                const mainParagraphs = mainSection
+                  .split('\n\n')
+                  .filter((p) => p.trim());
+
+                const accordionParagraphs = accordionSection
+                  .split('\n\n')
+                  .filter((p) => p.trim());
+
+                return (
+                  <>
+                    {mainParagraphs.map((p, i) => {
+                      if (p.startsWith('## ')) {
+                        return (
+                          <h3
+                            key={`h-${i}`}
+                            className={`font-serif-main text-2xl sm:text-3xl mb-5 mt-2 ${
+                              isDarkMode ? 'text-[#c8c0f5]' : 'text-[#2c2b29]'
+                            }`}
+                          >
+                            {renderFormattedText(p.replace(/^## /, ''))}
+                          </h3>
+                        );
+                      }
+                      return (
+                        <p
+                          key={`p-${i}`}
+                          className={`text-sm sm:text-base lg:text-lg font-sans-clean leading-relaxed mb-5 ${
+                            isDarkMode ? 'text-[#e8e4dc]/90' : 'text-[#2c2b29]'
+                          }`}
+                        >
+                          {renderFormattedText(p)}
+                        </p>
+                      );
+                    })}
+
+                    {accordionSection && (
+                      <div
+                        className={`mt-4 rounded-xs border overflow-hidden ${
+                          isDarkMode
+                            ? 'border-[#332f28] bg-[#1c1a17]/60'
+                            : 'border-[#e8e4dc] bg-white/60'
+                        }`}
+                      >
+                        <button
+                          onClick={() => setAccordionOpen(!accordionOpen)}
+                          className={`w-full flex items-center justify-between px-5 py-4 text-left transition-colors ${
+                            isDarkMode
+                              ? 'hover:bg-[#282521]/60'
+                              : 'hover:bg-[#f5f3f0]'
+                          }`}
+                        >
+                          <span
+                            className={`font-serif-main text-lg sm:text-xl ${
+                              isDarkMode ? 'text-[#c8c0f5]' : 'text-[#2c2b29]'
+                            }`}
+                          >
+                            Le Traiteur Parfait, par Le Oui Parfait
+                          </span>
+                          <ChevronDown
+                            className={`w-5 h-5 shrink-0 transition-transform duration-300 ${
+                              accordionOpen ? 'rotate-180' : ''
+                            } ${
+                              isDarkMode ? 'text-[#c8c0f5]' : 'text-[#78876e]'
+                            }`}
+                          />
+                        </button>
+                        {accordionOpen && (
+                          <div className="px-5 pb-5 pt-1">
+                            {accordionParagraphs.map((p, i) => (
+                              <p
+                                key={`acc-${i}`}
+                                className={`text-sm sm:text-base lg:text-lg font-sans-clean leading-relaxed mb-4 last:mb-0 ${
+                                  isDarkMode
+                                    ? 'text-[#e8e4dc]/90'
+                                    : 'text-[#2c2b29]'
+                                }`}
+                              >
+                                {renderFormattedText(p)}
+                              </p>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
 
               <div
                 className={`mt-8 inline-flex items-center gap-3 px-4 py-3 rounded-full border ${
@@ -424,64 +565,80 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
 
       {selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#141311]/95"
+          className="fixed inset-0 z-50 flex bg-[#141311]/97"
           onClick={() => setSelectedIndex(null)}
         >
-          <button
-            className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
-            onClick={() => setSelectedIndex(null)}
-            aria-label="Fermer"
-          >
-            <X className="w-8 h-8" />
-          </button>
-
-          {selectedIndex > 0 && (
-            <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors"
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelectedIndex(selectedIndex - 1);
-              }}
-              aria-label="Précédent"
-            >
-              <ChevronLeft className="w-10 h-10" />
-            </button>
-          )}
-
-          {selectedIndex < dishes.length - 1 && (
-            <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors"
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelectedIndex(selectedIndex + 1);
-              }}
-              aria-label="Suivant"
-            >
-              <ChevronRight className="w-10 h-10" />
-            </button>
-          )}
-
-          <div
-            className="max-w-4xl w-full max-h-[90vh] flex flex-col items-center overflow-auto"
+          {/* Sidebar gauche — liste des menus */}
+          <aside
+            className="w-[200px] sm:w-[260px] shrink-0 h-full overflow-y-auto border-r border-white/10 bg-[#1c1a17]/80 p-3 sm:p-4 flex flex-col gap-3"
             onClick={(e) => e.stopPropagation()}
           >
+            <p className="text-[10px] uppercase tracking-[0.25em] text-white/50 font-sans-clean mb-1 px-1">
+              Les menus
+            </p>
+            {dishes.map((dish, i) => (
+              <button
+                key={dish.id}
+                onClick={() => setSelectedIndex(i)}
+                className={`relative flex items-center gap-3 rounded-xs overflow-hidden transition-all text-left ${
+                  i === selectedIndex
+                    ? 'ring-2 ring-[#c8c0f5] opacity-100'
+                    : 'opacity-50 hover:opacity-90 ring-1 ring-white/10'
+                }`}
+              >
+                <img
+                  src={dish.image}
+                  alt={dish.name}
+                  className="w-14 h-14 sm:w-16 sm:h-16 object-cover shrink-0"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                />
+                <span className="text-[11px] sm:text-xs font-sans-clean text-white/80 truncate pr-2">
+                  {dish.name} {i + 1}
+                </span>
+              </button>
+            ))}
+          </aside>
+
+          {/* Zone principale — image plein écran */}
+          <div
+            className="flex-1 relative min-w-0 h-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10"
+              onClick={() => setSelectedIndex(null)}
+              aria-label="Fermer"
+            >
+              <X className="w-8 h-8" />
+            </button>
+
+            {selectedIndex > 0 && (
+              <button
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors z-10"
+                onClick={() => setSelectedIndex(selectedIndex - 1)}
+                aria-label="Précédent"
+              >
+                <ChevronLeft className="w-10 h-10" />
+              </button>
+            )}
+
+            {selectedIndex < dishes.length - 1 && (
+              <button
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors z-10"
+                onClick={() => setSelectedIndex(selectedIndex + 1)}
+                aria-label="Suivant"
+              >
+                <ChevronRight className="w-10 h-10" />
+              </button>
+            )}
+
             <img
               src={dishes[selectedIndex].image}
               alt={dishes[selectedIndex].name}
-              className="max-h-[70vh] w-auto object-contain rounded-xs shadow-2xl"
+              className="w-full h-full object-contain"
               referrerPolicy="no-referrer"
             />
-            <div className="mt-4 text-center px-4">
-              <p className="text-[10px] uppercase tracking-[0.25em] text-white/60 mb-1">
-                Au menu
-              </p>
-              <h3 className="font-serif-main text-2xl sm:text-3xl text-white">
-                {dishes[selectedIndex].name}
-              </h3>
-              <p className="mt-1 font-sans-clean text-sm sm:text-base text-white/80 max-w-2xl">
-                {dishes[selectedIndex].description}
-              </p>
-            </div>
           </div>
         </div>
       )}
