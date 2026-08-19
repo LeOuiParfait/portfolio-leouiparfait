@@ -536,9 +536,9 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
             </p>
           </Reveal>
 
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {dishes.map((dish, index) => (
-              <Reveal key={dish.id} variant="up" delay={index * 20} className="break-inside-avoid mb-6">
+              <Reveal key={dish.id} variant="up" delay={index * 20} className="mb-4">
                 <article
                   className={`relative group w-full overflow-hidden rounded-xs border cursor-pointer transition-transform duration-500 hover:-translate-y-1 ${
                     isDarkMode
