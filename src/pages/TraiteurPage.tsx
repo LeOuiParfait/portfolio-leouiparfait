@@ -568,36 +568,25 @@ export const TraiteurPage: React.FC<TraiteurPageProps> = ({
           className="fixed inset-0 z-50 flex bg-[#141311]/97"
           onClick={() => setSelectedIndex(null)}
         >
-          {/* Sidebar gauche — liste des menus */}
+          {/* Sidebar gauche — nom du menu courant */}
           <aside
-            className="w-[200px] sm:w-[260px] shrink-0 h-full overflow-y-auto border-r border-white/10 bg-[#1c1a17]/80 p-3 sm:p-4 flex flex-col gap-3"
+            className="w-[200px] sm:w-[260px] shrink-0 h-full border-r border-white/10 bg-[#1c1a17]/80 p-5 sm:p-8 flex flex-col justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <p className="text-[10px] uppercase tracking-[0.25em] text-white/50 font-sans-clean mb-1 px-1">
-              Les menus
+            <p className="text-[10px] uppercase tracking-[0.25em] text-white/40 font-sans-clean mb-4">
+              Menu
             </p>
-            {dishes.map((dish, i) => (
-              <button
-                key={dish.id}
-                onClick={() => setSelectedIndex(i)}
-                className={`relative flex items-center gap-3 rounded-xs overflow-hidden transition-all text-left ${
-                  i === selectedIndex
-                    ? 'ring-2 ring-[#c8c0f5] opacity-100'
-                    : 'opacity-50 hover:opacity-90 ring-1 ring-white/10'
-                }`}
-              >
-                <img
-                  src={dish.image}
-                  alt={dish.name}
-                  className="w-14 h-14 sm:w-16 sm:h-16 object-cover shrink-0"
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-                />
-                <span className="text-[11px] sm:text-xs font-sans-clean text-white/80 truncate pr-2">
-                  {dish.name} {i + 1}
-                </span>
-              </button>
-            ))}
+            <h3 className="font-serif-main text-xl sm:text-2xl text-[#f4a8bf] leading-tight mb-3">
+              {dishes[selectedIndex].name}
+            </h3>
+            <p className="text-xs sm:text-sm font-sans-clean italic text-[#e8e4dc]/80 leading-relaxed">
+              {dishes[selectedIndex].description}
+            </p>
+            <div className="mt-6 flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/40 font-sans-clean">
+              <span>{selectedIndex + 1}</span>
+              <span className="w-8 h-px bg-white/20" />
+              <span>{dishes.length}</span>
+            </div>
           </aside>
 
           {/* Zone principale — image plein écran */}
