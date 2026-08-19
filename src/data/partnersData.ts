@@ -169,43 +169,11 @@ Particularité : véritable showman, il ne se contente pas de mixer : il anime, 
       },
 
       show: {
-        src: '/dj/patrick show.mp4',
         poster:
-          '',
-        label: 'Spectacle',
-        title: 'Le show lumineux',
-      },
-    },
-  },
-
-  {
-    id: 'dj-julien',
-    name: 'DJ Julien',
-    tagline: 'La fête en fusion',
-    description:
-      'Julien enflamme les réceptions avec une énergie qui ne s\'arrête jamais. Entre classiques indémodables et tubes actuels, il jongle avec les styles et les ambiances pour que chaque génération trouve son rythme. Un show toujours ajusté à l\'énergie de votre soirée.',
-    rating: 5,
-
-    mainImage:
-      'https://images.unsplash.com/photo-1772187727779-fdcdde1b307d?auto=format&fit=crop&w=1200&q=90',
-
-    videos: {
-      mix: {
-        src: 'https://videos.pexels.com/video-files/3125365/3125365-uhd_2560_1440_25fps.mp4',
-        poster:
-          'https://images.unsplash.com/photo-1762028895490-5b777a1f6165?auto=format&fit=crop&w=1200&q=90',
-        label: 'En action',
-        title: 'Le mix en live',
-      },
-
-      show: {
-        src: 'https://videos.pexels.com/video-files/5848544/5848544-uhd_2560_1440_25fps.mp4',
-        poster:
-          'https://images.unsplash.com/photo-1768405031181-33bb016e2fbb?auto=format&fit=crop&w=1200&q=90',
+          'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=90',
         label: 'Spectacle',
         title: 'Le show lumineux',
       },
     },
   },
 ];
-

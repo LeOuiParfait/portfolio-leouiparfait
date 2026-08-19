@@ -290,17 +290,6 @@ export const DjsPage: React.FC<DjsPageProps> = ({
               Chaque mariage mérite une bande-son sur mesure. Créons ensemble une
               soirée inoubliable.
             </p>
-            <button
-              type="button"
-              onClick={onOpenContact}
-              className={`inline-flex px-5 sm:px-7 py-2 sm:py-2.5 rounded-full font-sans-clean font-medium text-xs sm:text-sm transition-all shadow-md active:scale-95 ${
-                isDarkMode
-                  ? 'bg-[#c8c0f5] text-[#141311] hover:bg-[#e8e4dc]'
-                  : 'bg-[#8b9a82] text-white hover:bg-[#74836b]'
-              }`}
-            >
-              Demander un devis DJ
-            </button>
           </div>
         </Reveal>
 
