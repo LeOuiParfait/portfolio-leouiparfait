@@ -9,6 +9,8 @@ import { DjsPage } from './pages/DjsPage';
 import { TraiteurPage } from './pages/TraiteurPage';
 import { AnimationPage } from './pages/AnimationPage';
 import { FlamencoPage } from './pages/FlamencoPage';
+import { OfficiantPage } from './pages/OfficiantPage';
+import { NoraPage } from './pages/NoraPage';
 import { StoryItem } from './types';
 
 function ScrollToTop() {
@@ -84,6 +86,24 @@ function AppShell() {
           path="/flamenco"
           element={
             <FlamencoPage
+              isDarkMode={isDarkMode}
+              onOpenContact={() => setIsContactOpen(true)}
+            />
+          }
+        />
+        <Route
+          path="/officiant"
+          element={
+            <OfficiantPage
+              isDarkMode={isDarkMode}
+              onOpenContact={() => setIsContactOpen(true)}
+            />
+          }
+        />
+        <Route
+          path="/nora"
+          element={
+            <NoraPage
               isDarkMode={isDarkMode}
               onOpenContact={() => setIsContactOpen(true)}
             />
