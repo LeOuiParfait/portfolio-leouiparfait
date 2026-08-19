@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Music, User, Layers, Play, Sparkles, Volume2, VolumeX } from 'lucide-react';
+import { ArrowLeft, Music, User, Layers, Play, Sparkles, Volume2, VolumeX, Instagram, Globe, ExternalLink } from 'lucide-react';
 import { RomanticBackground } from '../components/RomanticBackground';
 import { BowDivider } from '../components/BowDivider';
 import { Reveal } from '../components/Reveal';
@@ -420,6 +420,51 @@ export const FlamencoPage: React.FC<FlamencoPageProps> = ({
                   className="w-full h-full object-cover aspect-[4/3]"
                   referrerPolicy="no-referrer"
                 />
+              </div>
+
+              {/* Liens sociaux */}
+              <div className="max-w-[400px] w-full mx-auto mt-6 flex flex-row gap-3 justify-center">
+                <a
+                  href="https://www.instagram.com/carolinepastorflamenco/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Instagram — @carolinepastorflamenco"
+                  className={`group flex items-center justify-center w-12 h-12 rounded-full border transition-all hover:scale-110 ${
+                    isDarkMode
+                      ? 'border-[#332f28] bg-[#1c1a17] hover:border-[#f4a8bf]/50'
+                      : 'border-[#e8e4dc] bg-white hover:border-[#f4a8bf]/50'
+                  }`}
+                >
+                  <Instagram className="w-5 h-5 text-[#f4a8bf]" />
+                </a>
+
+                <a
+                  href="https://carolinapastor.wixsite.com/flamenco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Site officiel — carolinapastor.wixsite.com"
+                  className={`group flex items-center justify-center w-12 h-12 rounded-full border transition-all hover:scale-110 ${
+                    isDarkMode
+                      ? 'border-[#332f28] bg-[#1c1a17] hover:border-[#f4a8bf]/50'
+                      : 'border-[#e8e4dc] bg-white hover:border-[#f4a8bf]/50'
+                  }`}
+                >
+                  <Globe className="w-5 h-5 text-[#c8c0f5]" />
+                </a>
+
+                <a
+                  href="https://www.flamencoenfrance.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Flamenco en France — flamencoenfrance.fr"
+                  className={`group flex items-center justify-center w-12 h-12 rounded-full border transition-all hover:scale-110 ${
+                    isDarkMode
+                      ? 'border-[#332f28] bg-[#1c1a17] hover:border-[#f4a8bf]/50'
+                      : 'border-[#e8e4dc] bg-white hover:border-[#f4a8bf]/50'
+                  }`}
+                >
+                  <Music className="w-5 h-5 text-[#f4a8bf]" />
+                </a>
               </div>
             </Reveal>
 

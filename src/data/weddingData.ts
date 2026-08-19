@@ -634,7 +634,7 @@ export const CREATIVE_COLLAGE_DATA = {
 export const TEAM_MEMBERS = [
   { name: 'Kathy', role: 'Wedding Planner & Designer Principal', image: '/equipe/kathy.png' },
   { name: 'Amelia', role: 'Negafa', image: '/equipe/amelia.png' },
-  { name: 'Yann', role: 'Spécialiste Logistique & Commercial', image: '/equipe/yan.jpeg' },
+  { name: 'Yann', role: 'Spécialiste Logistique & Commercial', image: '/equipe/yan.jpg' },
   { name: 'Noella', role: 'Wedding Planner & Animatrice', image: '/equipe/Noella.jpg' },
   { name: 'Miriam', role: 'Chargée Communication', image: '/equipe/miriam.png' },
   { name: 'Junel', role: 'Développement Web, Marketing & Vidéaste', image: '/equipe/junel.png' },
