@@ -157,7 +157,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '',
-    video: '/Loic%20et%20Camille/403093_20250523-c5011-1-174825063818539.mp4',
+    video: '/Loic%20et%20Camille/camille et loic.mp4',
     gallery: [
     ],
     category: 'mariage',
@@ -170,7 +170,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Corse',
     image: '',
-    video: '/Manon%20et%20alex/444763_teaser-romain-et-eulalie-3-177994541982927.mp4',
+    video: '/Manon%20et%20alex/manon et alex.mp4',
     gallery: [
     ],
     category: 'mariage',

@@ -423,47 +423,95 @@ export const FlamencoPage: React.FC<FlamencoPageProps> = ({
               </div>
 
               {/* Liens sociaux */}
-              <div className="max-w-[400px] w-full mx-auto mt-6 flex flex-row gap-3 justify-center">
+              <div className="max-w-[400px] w-full mx-auto mt-6 flex flex-col gap-3">
                 <a
                   href="https://www.instagram.com/carolinepastorflamenco/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Instagram — @carolinepastorflamenco"
-                  className={`group flex items-center justify-center w-12 h-12 rounded-full border transition-all hover:scale-110 ${
+                  className={`group flex items-center gap-3 px-5 py-3.5 rounded-xs border transition-all hover:scale-[1.02] ${
                     isDarkMode
                       ? 'border-[#332f28] bg-[#1c1a17] hover:border-[#f4a8bf]/50'
                       : 'border-[#e8e4dc] bg-white hover:border-[#f4a8bf]/50'
                   }`}
                 >
-                  <Instagram className="w-5 h-5 text-[#f4a8bf]" />
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#f4a8bf]/20 to-[#c8c0f5]/20 flex items-center justify-center shrink-0">
+                    <Instagram className="w-4.5 h-4.5 text-[#f4a8bf]" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className={`text-[10px] uppercase tracking-widest font-sans-clean ${
+                      isDarkMode ? 'text-[#807b71]' : 'text-[#8a8780]'
+                    }`}>
+                      Instagram
+                    </p>
+                    <p className={`text-xs sm:text-sm font-sans-clean truncate ${
+                      isDarkMode ? 'text-[#e8e4dc]' : 'text-[#2c2b29]'
+                    }`}>
+                      @carolinepastorflamenco
+                    </p>
+                  </div>
+                  <ExternalLink className={`w-4 h-4 shrink-0 transition-colors ${
+                    isDarkMode ? 'text-[#807b71] group-hover:text-[#f4a8bf]' : 'text-[#8a8780] group-hover:text-[#f4a8bf]'
+                  }`} />
                 </a>
 
                 <a
                   href="https://carolinapastor.wixsite.com/flamenco"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Site officiel — carolinapastor.wixsite.com"
-                  className={`group flex items-center justify-center w-12 h-12 rounded-full border transition-all hover:scale-110 ${
+                  className={`group flex items-center gap-3 px-5 py-3.5 rounded-xs border transition-all hover:scale-[1.02] ${
                     isDarkMode
                       ? 'border-[#332f28] bg-[#1c1a17] hover:border-[#f4a8bf]/50'
                       : 'border-[#e8e4dc] bg-white hover:border-[#f4a8bf]/50'
                   }`}
                 >
-                  <Globe className="w-5 h-5 text-[#c8c0f5]" />
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#c8c0f5]/20 to-[#f4a8bf]/20 flex items-center justify-center shrink-0">
+                    <Globe className="w-4.5 h-4.5 text-[#c8c0f5]" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className={`text-[10px] uppercase tracking-widest font-sans-clean ${
+                      isDarkMode ? 'text-[#807b71]' : 'text-[#8a8780]'
+                    }`}>
+                      Site officiel
+                    </p>
+                    <p className={`text-xs sm:text-sm font-sans-clean truncate ${
+                      isDarkMode ? 'text-[#e8e4dc]' : 'text-[#2c2b29]'
+                    }`}>
+                      carolinapastor.wixsite.com
+                    </p>
+                  </div>
+                  <ExternalLink className={`w-4 h-4 shrink-0 transition-colors ${
+                    isDarkMode ? 'text-[#807b71] group-hover:text-[#f4a8bf]' : 'text-[#8a8780] group-hover:text-[#f4a8bf]'
+                  }`} />
                 </a>
 
                 <a
                   href="https://www.flamencoenfrance.fr/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Flamenco en France — flamencoenfrance.fr"
-                  className={`group flex items-center justify-center w-12 h-12 rounded-full border transition-all hover:scale-110 ${
+                  className={`group flex items-center gap-3 px-5 py-3.5 rounded-xs border transition-all hover:scale-[1.02] ${
                     isDarkMode
                       ? 'border-[#332f28] bg-[#1c1a17] hover:border-[#f4a8bf]/50'
                       : 'border-[#e8e4dc] bg-white hover:border-[#f4a8bf]/50'
                   }`}
                 >
-                  <Music className="w-5 h-5 text-[#f4a8bf]" />
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#f4a8bf]/20 to-[#c8c0f5]/20 flex items-center justify-center shrink-0">
+                    <Music className="w-4.5 h-4.5 text-[#f4a8bf]" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className={`text-[10px] uppercase tracking-widest font-sans-clean ${
+                      isDarkMode ? 'text-[#807b71]' : 'text-[#8a8780]'
+                    }`}>
+                      Flamenco en France
+                    </p>
+                    <p className={`text-xs sm:text-sm font-sans-clean truncate ${
+                      isDarkMode ? 'text-[#e8e4dc]' : 'text-[#2c2b29]'
+                    }`}>
+                      flamencoenfrance.fr
+                    </p>
+                  </div>
+                  <ExternalLink className={`w-4 h-4 shrink-0 transition-colors ${
+                    isDarkMode ? 'text-[#807b71] group-hover:text-[#f4a8bf]' : 'text-[#8a8780] group-hover:text-[#f4a8bf]'
+                  }`} />
                 </a>
               </div>
             </Reveal>
