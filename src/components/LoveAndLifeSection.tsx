@@ -1,7 +1,7 @@
 import React from 'react';
 import { STORIES } from '../data/weddingData';
 import { StoryItem } from '../types';
-import { MapPin, Calendar, Eye } from 'lucide-react';
+import { MapPin, Calendar, Eye, Video, ExternalLink } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 interface LoveAndLifeProps {
@@ -34,11 +34,37 @@ export const LoveAndLifeSection: React.FC<LoveAndLifeProps> = ({
 
         {/* Sub Header Bar */}
         <div
-          className={`flex items-center justify-between border-b pb-3 mb-8 text-xs sm:text-sm font-sans-clean uppercase tracking-widest ${
+          className={`flex flex-wrap items-center justify-between gap-3 border-b pb-3 mb-8 text-xs sm:text-sm font-sans-clean uppercase tracking-widest ${
             isDarkMode ? 'border-[#2e2a24] text-[#c8c0f5]' : 'border-[#e8e4dc] text-[#78876e]'
           }`}
         >
           <span>DERNIÈRES HISTOIRES</span>
+          <span className="flex items-center gap-3 normal-case tracking-normal">
+            <span className="text-[10px] uppercase tracking-widest opacity-60">Vidéaste :</span>
+            <a
+              href="https://21gproduction.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1.5 text-xs font-sans-clean transition-colors hover:text-[#f4a8bf] ${
+                isDarkMode ? 'text-[#b5b0a5]' : 'text-[#5a5750]'
+              }`}
+            >
+              <Video className="w-3.5 h-3.5" />
+              21 Grammes Production
+              <ExternalLink className="w-3 h-3 opacity-50" />
+            </a>
+            <a
+              href="https://www.mariages.net/video-mariage/21-grammes-production--e246685"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1.5 text-xs font-sans-clean transition-colors hover:text-[#f4a8bf] ${
+                isDarkMode ? 'text-[#b5b0a5]' : 'text-[#5a5750]'
+              }`}
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              Mariages.net
+            </a>
+          </span>
           <span className={`${isDarkMode ? 'text-[#b5b0a5]' : 'text-[#5a5750]'}`}>
             {STORIES.length} récits
           </span>
