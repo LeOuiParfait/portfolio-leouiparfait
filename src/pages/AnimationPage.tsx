@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronDown, Palette, Backpack, Lightbulb, Mic, Drama, Sparkles, Check, Users, Brush, Gamepad2, Heart } from 'lucide-react';
+import { HlsVideo } from '../components/LoveAndLifeSection';
 import { RomanticBackground } from '../components/RomanticBackground';
 import { BowDivider } from '../components/BowDivider';
 import { Reveal } from '../components/Reveal';
@@ -12,8 +13,8 @@ const ANIMATION_HERO_IMAGES = {
   main: '/la maison des 4A.webp',
   logo: '/maison des 4A logo.webp',
   montessori: '/methode montesouris.webp',
-  childLeft: '/animation enfant (1).mp4',
-  childRight: '/animation enfant (2).mp4',
+  childLeft: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/fc53b8810d8c2691eaabc8c7f6f4b188/manifest/video.m3u8',
+  childRight: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/b0999e991e9337e63a51c69c0a935580/manifest/video.m3u8',
 };
 
 interface AnimationPageProps {
@@ -213,12 +214,8 @@ export const AnimationPage: React.FC<AnimationPageProps> = ({
                   isDarkMode ? 'bg-[#282521]' : 'bg-[#e8e4dc]/40'
                 }`}
               >
-                <video
+                <HlsVideo
                   src={ANIMATION_HERO_IMAGES.childLeft}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -348,12 +345,8 @@ export const AnimationPage: React.FC<AnimationPageProps> = ({
                   isDarkMode ? 'bg-[#282521]' : 'bg-[#e8e4dc]/40'
                 }`}
               >
-                <video
+                <HlsVideo
                   src={ANIMATION_HERO_IMAGES.childRight}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
                   className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                 />
               </div>

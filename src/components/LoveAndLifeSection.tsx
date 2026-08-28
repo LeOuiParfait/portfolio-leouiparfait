@@ -1,13 +1,69 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { STORIES } from '../data/weddingData';
 import { StoryItem } from '../types';
 import { MapPin, Calendar, Eye, Video, ExternalLink } from 'lucide-react';
 import { Reveal } from './Reveal';
+import Hls from 'hls.js';
 
 interface LoveAndLifeProps {
   onSelectStory: (story: StoryItem) => void;
   isDarkMode?: boolean;
 }
+
+export const HlsVideo: React.FC<{
+  src: string;
+  poster?: string;
+  className?: string;
+  controls?: boolean;
+}> = ({
+  src,
+  poster,
+  className,
+  controls,
+}) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    let hls: Hls | null = null;
+    const isHls = src.endsWith('.m3u8');
+
+    if (isHls && Hls.isSupported()) {
+      hls = new Hls({
+        capLevelToPlayerSize: true,
+        maxBufferLength: 10,
+      });
+      hls.loadSource(src);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        video.play().catch(() => {});
+      });
+    } else if (isHls && video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = src;
+    } else {
+      video.src = src;
+    }
+
+    return () => {
+      hls?.destroy();
+    };
+  }, [src]);
+
+  return (
+    <video
+      ref={videoRef}
+      poster={poster}
+      autoPlay
+      muted
+      loop
+      playsInline
+      controls={controls}
+      className={className}
+    />
+  );
+};
 
 export const LoveAndLifeSection: React.FC<LoveAndLifeProps> = ({
   onSelectStory,
@@ -95,13 +151,9 @@ export const LoveAndLifeSection: React.FC<LoveAndLifeProps> = ({
                 onClick={() => onSelectStory(story)}
               >
                 {story.video ? (
-                  <video
+                  <HlsVideo
                     src={story.video}
                     poster={story.image || undefined}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
                     className="w-full h-full object-cover pointer-events-none"
                   />
                 ) : (

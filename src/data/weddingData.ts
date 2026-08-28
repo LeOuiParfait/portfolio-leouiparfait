@@ -19,7 +19,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '/Raumane%20et%20maxime/MariageM&J-052_resultat.webp',
-    video: '/Raumane%20et%20maxime/406367_teaser-raumane-maxime-22042024-1-175022933874382.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/83686a13e5f54899f950158f72c8c32e/manifest/video.m3u8',
     gallery: [
       '/Raumane%20et%20maxime/MariageM&J-052_resultat.webp',
       '/Raumane%20et%20maxime/MariageM&J-121_resultat.webp',
@@ -34,7 +34,7 @@ export const STORIES: StoryItem[] = [
     date: '23 MAI 2025',
     location: 'Cormeilles-en-Parisis, Val-d\'Oise',
     image: '/Thomas%20&%20R%C3%A9nia/4895517.webp',
-    video: '/Thomas%20&%20R%C3%A9nia/403065_20250523-c5011-174824940072127.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/880252c1927223f2c511570fde7cfd9b/manifest/video.m3u8',
     gallery: [
       '/Thomas%20&%20R%C3%A9nia/4895517.webp',
       '/Thomas%20&%20R%C3%A9nia/4895519.webp',
@@ -79,7 +79,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '',
-    video: '/Alan%20et%20Daria/444767_teaser-romain-et-eulalie-2-177994563634265.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/2a68f7c8e4fef5885e20a312dc823620/manifest/video.m3u8',
     gallery: [
     ],
     category: 'mariage',
@@ -92,7 +92,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '',
-    video: '/Aurelien%20et%20angelique/444769_teaser-romain-et-eulalie-4-177994573076566.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/771360ab3673da41460d3eeb0dc444e3/manifest/video.m3u8',
     gallery: [
     ],
     category: 'mariage',
@@ -105,7 +105,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '',
-    video: '/Diane%20et%20Th%C3%A9o/403091_20250523-c5011-2-174825061597737.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/a00e816dae9311baaae42bb055745731/manifest/video.m3u8',
     gallery: [
     ],
     category: 'mariage',
@@ -118,7 +118,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '',
-    video: '/Eulalie%20et%20Romain/444759_teaser-romain-et-eulalie-1-177994482232454.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/9dca8416fb02148ee83353ad12d7e529/manifest/video.m3u8',
     gallery: [
     ],
     category: 'mariage',
@@ -131,7 +131,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '',
-    video: '/Ismael%20et%20marie/403075_copie-de-a-ismail-teaser-174824961663103.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/401fb37aa05ba1310dfed1707571688e/manifest/video.m3u8',
     gallery: [
     ],
     category: 'mariage',
@@ -144,7 +144,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '',
-    video: '/Julie%20et%20anthony/239595_mariage-julie-et-anthony-165470784419850.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/3f232094563c1077db5efd7736b0c840/manifest/video.m3u8',
     gallery: [
     ],
     category: 'mariage',
@@ -157,7 +157,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '',
-    video: '/Loic%20et%20Camille/camille et loic.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/299d0eb6866b3887b741fd78559fce18/manifest/video.m3u8',
     gallery: [
     ],
     category: 'mariage',
@@ -170,7 +170,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Corse',
     image: '',
-    video: '/Manon%20et%20alex/manon et alex.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/874c278c1a8513ac004e62cb93aa76fd/manifest/video.m3u8',
     gallery: [
     ],
     category: 'mariage',
@@ -183,7 +183,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '',
-    video: '/Margaux%20et%20Carl/444761_teaser-romain-et-eulalie-2-177994512924847.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/1a5f00a76759ba0b918f1cc91e4090e0/manifest/video.m3u8',
     gallery: [
     ],
     category: 'mariage',
@@ -196,7 +196,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '',
-    video: '/romuald%20et%20manon/403087_20250523-c5011-174825052914871.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/0dc8bcdf1afe0404bb9c5f02f6789268/manifest/video.m3u8',
     gallery: [
     ],
     category: 'mariage',
@@ -209,7 +209,7 @@ export const STORIES: StoryItem[] = [
     date: 'MARIAGE RÉALISÉ',
     location: 'Paris & Île-de-France',
     image: '',
-    video: '/Zunerra%20et%20Ossama/219595_p1322791-163640808219037.mp4',
+    video: 'https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/a56deb206708b3bfa3f849183f55bf33/manifest/video.m3u8',
     gallery: [
     ],
     category: 'mariage',

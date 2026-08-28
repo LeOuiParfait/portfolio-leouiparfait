@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Music, User, Layers, Play, Sparkles, Volume2, VolumeX, Instagram, Globe, ExternalLink } from 'lucide-react';
+import { HlsVideo } from '../components/LoveAndLifeSection';
 import { RomanticBackground } from '../components/RomanticBackground';
 import { BowDivider } from '../components/BowDivider';
 import { Reveal } from '../components/Reveal';
@@ -47,13 +48,9 @@ const FlamencoVideo: React.FC<FlamencoVideoProps> = ({ src, poster, isDarkMode }
   return (
     <div className="relative flex-1 min-w-0 group">
       <div className="relative aspect-video overflow-hidden bg-black rounded-sm">
-        <video
+        <HlsVideo
           src={src}
           poster={poster}
-          autoPlay
-          muted
-          loop
-          playsInline
           controls
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.025]"
         />
@@ -701,7 +698,7 @@ export const FlamencoPage: React.FC<FlamencoPageProps> = ({
           <Reveal variant="zoom" className="w-full">
             <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 max-w-5xl mx-auto w-full">
               <FlamencoVideo
-                src="/caroline video.mp4"
+                src="https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/76944bd08acbf2942bb4ca97b304ecc9/manifest/video.m3u8"
                 isDarkMode={isDarkMode}
               />
 
@@ -765,7 +762,7 @@ export const FlamencoPage: React.FC<FlamencoPageProps> = ({
           <Reveal variant="zoom" className="w-full">
             <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 max-w-5xl mx-auto w-full">
               <FlamencoVideo
-                src="/caroline video 2.mp4"
+                src="https://customer-wqxo6nzwlwy95bai.cloudflarestream.com/448a743cba30f2385b29c192ddeecb10/manifest/video.m3u8"
                 isDarkMode={isDarkMode}
               />
 

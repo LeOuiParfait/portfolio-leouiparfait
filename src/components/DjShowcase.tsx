@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { Star } from 'lucide-react';
 
 import { DjPartner } from '../types';
+import { HlsVideo } from './LoveAndLifeSection';
 import { Reveal } from '../components/Reveal';
 import { BowDivider } from '../components/BowDivider';
 
@@ -279,15 +280,9 @@ export const DjShowcase: React.FC<DjShowcaseProps> = ({
             >
               <div className="relative aspect-video overflow-hidden">
                 {video.src ? (
-                  <video
+                  <HlsVideo
                     src={video.src}
                     poster={video.poster}
-                    autoPlay
-                    muted
-                    loop
-                    controls
-                    playsInline
-                    preload="auto"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.025]"
                   />
                 ) : (
