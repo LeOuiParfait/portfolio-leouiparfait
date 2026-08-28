@@ -153,7 +153,6 @@ export const LoveAndLifeSection: React.FC<LoveAndLifeProps> = ({
                 {story.video ? (
                   <HlsVideo
                     src={story.video}
-                    poster={story.image || undefined}
                     className="w-full h-full object-cover pointer-events-none"
                   />
                 ) : (
