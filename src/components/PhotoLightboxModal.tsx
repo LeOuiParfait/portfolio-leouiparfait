@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { HlsVideo } from './LoveAndLifeSection';
 import {
   X,
   Calendar,
@@ -89,15 +90,12 @@ export const PhotoLightboxModal: React.FC<PhotoLightboxModalProps> = ({
               }`}
             >
               {story.video ? (
-                <video
+                <HlsVideo
                   src={story.video}
                   poster={story.image || undefined}
                   className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
                   controls
+                  muted={false}
                 />
               ) : (
                 <img

@@ -638,7 +638,7 @@ export const TEAM_MEMBERS = [
   { name: 'Noella', role: 'Wedding Planner & Animatrice', image: '/equipe/Noella.jpg' },
   { name: 'Miriam', role: 'Chargée Communication', image: '/equipe/miriam.png' },
   { name: 'Junel', role: 'Développement Web, Marketing & Vidéaste', image: '/equipe/junel.png' },
-  { name: 'Samuel', role: 'Vidéaste', image: '/equipe/Sam.jpg' },
+  { name: 'Samuel', role: "Réalisateur – directeur d'opérations", image: '/equipe/Sam.jpg' },
 ];
 
 export const CONTACT_INFO = {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { STORIES } from '../data/weddingData';
 import { StoryItem } from '../types';
 import { MapPin, Calendar, Eye, Video, ExternalLink } from 'lucide-react';
@@ -10,18 +10,38 @@ interface LoveAndLifeProps {
   isDarkMode?: boolean;
 }
 
-export const HlsVideo: React.FC<{
+interface HlsVideoProps {
   src: string;
   poster?: string;
   className?: string;
   controls?: boolean;
-}> = ({
+  muted?: boolean;
+  hoverUnmute?: boolean;
+  unmuteOnClick?: boolean;
+  disableFullscreen?: boolean;
+}
+
+export const HlsVideo: React.FC<HlsVideoProps> = ({
   src,
   poster,
   className,
   controls,
+  muted: controlledMuted,
+  hoverUnmute,
+  unmuteOnClick,
+  disableFullscreen,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [internalMuted, setInternalMuted] = useState(true);
+  const [persistUnmute, setPersistUnmute] = useState(false);
+
+  const muted = controlledMuted !== undefined ? controlledMuted : internalMuted;
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = muted;
+  }, [muted]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -51,16 +71,40 @@ export const HlsVideo: React.FC<{
     };
   }, [src]);
 
+  const handleMouseEnter = () => {
+    if (hoverUnmute) {
+      setInternalMuted(false);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (hoverUnmute && !persistUnmute) {
+      setInternalMuted(true);
+    }
+  };
+
+  const handleClick = () => {
+    if (unmuteOnClick) {
+      setPersistUnmute(true);
+      setInternalMuted(false);
+    }
+  };
+
   return (
     <video
       ref={videoRef}
       poster={poster}
       autoPlay
-      muted
+      muted={muted}
       loop
       playsInline
       controls={controls}
+      controlsList={disableFullscreen ? 'nofullscreen' : undefined}
+      disablePictureInPicture={disableFullscreen}
       className={className}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     />
   );
 };
@@ -69,6 +113,8 @@ export const LoveAndLifeSection: React.FC<LoveAndLifeProps> = ({
   onSelectStory,
   isDarkMode = true,
 }) => {
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+
   return (
     <section id="stories" className="bg-black py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -149,11 +195,14 @@ export const LoveAndLifeSection: React.FC<LoveAndLifeProps> = ({
                 type="button"
                 className="relative w-full overflow-hidden rounded-sm aspect-video shadow-xl cursor-pointer bg-transparent border-0 p-0 text-left"
                 onClick={() => onSelectStory(story)}
+                onMouseEnter={() => setHoveredId(story.id)}
+                onMouseLeave={() => setHoveredId(null)}
               >
                 {story.video ? (
                   <HlsVideo
                     src={story.video}
                     className="w-full h-full object-cover pointer-events-none"
+                    muted={hoveredId !== story.id}
                   />
                 ) : (
                   <img

@@ -52,6 +52,9 @@ const FlamencoVideo: React.FC<FlamencoVideoProps> = ({ src, poster, isDarkMode }
           src={src}
           poster={poster}
           controls
+          hoverUnmute
+          unmuteOnClick
+          disableFullscreen
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.025]"
         />
       </div>

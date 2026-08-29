@@ -284,6 +284,8 @@ export const DjShowcase: React.FC<DjShowcaseProps> = ({
                     src={video.src}
                     poster={video.poster}
                     controls
+                    hoverUnmute
+                    unmuteOnClick
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.025]"
                   />
                 ) : (
