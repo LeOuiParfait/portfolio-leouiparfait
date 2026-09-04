@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { HlsVideo } from './LoveAndLifeSection';
 import {
   X,
   Calendar,
+  Download,
   MapPin,
   Sparkles,
   ChevronLeft,
@@ -61,6 +62,17 @@ export const PhotoLightboxModal: React.FC<PhotoLightboxModalProps> = ({
   const closePhoto = () => setPhotoIndex(null);
   const openPhoto = (idx: number) => setPhotoIndex(idx);
 
+  const downloadUrl = useMemo(() => {
+    if (!story) return undefined;
+    if (story.download) return story.download;
+    if (!story.video) return undefined;
+    if (story.video.endsWith('.mp4')) return story.video;
+    const match = story.video.match(
+      /^(https:\/\/customer-[^/]+\.cloudflarestream\.com\/[a-f0-9]+)\/manifest\/video\.m3u8$/i
+    );
+    return match ? `${match[1]}/downloads/default.mp4` : undefined;
+  }, [story]);
+
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in overflow-y-auto">
       <div
@@ -106,6 +118,22 @@ export const PhotoLightboxModal: React.FC<PhotoLightboxModalProps> = ({
                 />
               )}
             </div>
+            {downloadUrl && (
+              <a
+                href={downloadUrl}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-medium transition-all shadow-xs ${
+                  isDarkMode
+                    ? 'bg-[#c8c0f5] text-[#141311] hover:bg-[#e8e4dc]'
+                    : 'bg-[#8b9a82] text-white hover:bg-[#74836b]'
+                }`}
+              >
+                <Download className="w-4 h-4" />
+                Télécharger la vidéo
+              </a>
+            )}
           </div>
 
           <div className="lg:col-span-5 space-y-4 font-sans-clean">
