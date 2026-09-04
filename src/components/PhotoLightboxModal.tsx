@@ -1,13 +1,14 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HlsVideo } from './LoveAndLifeSection';
 import {
   X,
   Calendar,
-  Download,
   MapPin,
   Sparkles,
   ChevronLeft,
   ChevronRight,
+  Download,
+  Loader2,
 } from 'lucide-react';
 import { StoryItem } from '../types';
 
@@ -18,6 +19,13 @@ interface PhotoLightboxModalProps {
   isDarkMode?: boolean;
 }
 
+const getCloudflareDownloadUrl = (videoUrl: string): string | null => {
+  const match = videoUrl.match(
+    /^(https:\/\/customer-[a-z0-9]+\.cloudflarestream\.com\/[a-f0-9]+)\/manifest\//
+  );
+  return match ? `${match[1]}/downloads/default.mp4` : null;
+};
+
 export const PhotoLightboxModal: React.FC<PhotoLightboxModalProps> = ({
   story,
   onClose,
@@ -25,8 +33,11 @@ export const PhotoLightboxModal: React.FC<PhotoLightboxModalProps> = ({
   isDarkMode = true,
 }) => {
   const [photoIndex, setPhotoIndex] = useState<number | null>(null);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   const gallery = story?.gallery || [];
+
+  const downloadUrl = story?.video ? getCloudflareDownloadUrl(story.video) : null;
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -62,16 +73,27 @@ export const PhotoLightboxModal: React.FC<PhotoLightboxModalProps> = ({
   const closePhoto = () => setPhotoIndex(null);
   const openPhoto = (idx: number) => setPhotoIndex(idx);
 
-  const downloadUrl = useMemo(() => {
-    if (!story) return undefined;
-    if (story.download) return story.download;
-    if (!story.video) return undefined;
-    if (story.video.endsWith('.mp4')) return story.video;
-    const match = story.video.match(
-      /^(https:\/\/customer-[^/]+\.cloudflarestream\.com\/[a-f0-9]+)\/manifest\/video\.m3u8$/i
-    );
-    return match ? `${match[1]}/downloads/default.mp4` : undefined;
-  }, [story]);
+  const handleDownload = async () => {
+    if (!downloadUrl) return;
+    setIsDownloading(true);
+    try {
+      const response = await fetch(downloadUrl);
+      if (!response.ok) throw new Error('Download failed');
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${story.title}.mp4`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch {
+      window.open(downloadUrl, '_blank', 'noopener,noreferrer');
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in overflow-y-auto">
@@ -97,18 +119,35 @@ export const PhotoLightboxModal: React.FC<PhotoLightboxModalProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-7">
             <div
-              className={`aspect-[4/3] rounded-xs overflow-hidden border ${
+              className={`relative aspect-[4/3] rounded-xs overflow-hidden border ${
                 isDarkMode ? 'border-[#38332c] bg-black/40' : 'border-[#e8e4dc] bg-black/5'
               }`}
             >
               {story.video ? (
-                <HlsVideo
-                  src={story.video}
-                  poster={story.image || undefined}
-                  className="w-full h-full object-cover"
-                  controls
-                  muted={false}
-                />
+                <>
+                  <HlsVideo
+                    src={story.video}
+                    poster={story.image || undefined}
+                    className="w-full h-full object-cover"
+                    controls
+                    muted={false}
+                  />
+                  {downloadUrl && (
+                    <button
+                      type="button"
+                      onClick={handleDownload}
+                      disabled={isDownloading}
+                      title="Télécharger la vidéo"
+                      className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full flex items-center justify-center bg-black/60 hover:bg-black/80 text-white transition-colors disabled:opacity-50"
+                    >
+                      {isDownloading ? (
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                      ) : (
+                        <Download className="w-5 h-5" />
+                      )}
+                    </button>
+                  )}
+                </>
               ) : (
                 <img
                   src={story.image}
@@ -118,22 +157,6 @@ export const PhotoLightboxModal: React.FC<PhotoLightboxModalProps> = ({
                 />
               )}
             </div>
-            {downloadUrl && (
-              <a
-                href={downloadUrl}
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-medium transition-all shadow-xs ${
-                  isDarkMode
-                    ? 'bg-[#c8c0f5] text-[#141311] hover:bg-[#e8e4dc]'
-                    : 'bg-[#8b9a82] text-white hover:bg-[#74836b]'
-                }`}
-              >
-                <Download className="w-4 h-4" />
-                Télécharger la vidéo
-              </a>
-            )}
           </div>
 
           <div className="lg:col-span-5 space-y-4 font-sans-clean">

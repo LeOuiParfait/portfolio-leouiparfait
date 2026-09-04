@@ -6,7 +6,6 @@ export interface StoryItem {
   location: string;
   image: string;
   video?: string;
-  download?: string;
   gallery?: string[];
   category: 'mariage' | 'elopement' | 'engagement';
   description: string;
