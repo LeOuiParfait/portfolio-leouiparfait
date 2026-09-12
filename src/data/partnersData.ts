@@ -35,6 +35,13 @@ Parce qu'un repas de mariage ne doit pas simplement être bon.
   chefImage:
     '/chef traiteur (2).png',
   dishes: [
+    { id: 'nouveau-plat-1', name: "", image: "/shooting la saveur etoilee/nouveaux plats (1).png", description: "" },
+    { id: 'nouveau-plat-2', name: "", image: "/shooting la saveur etoilee/nouveaux plats (2).png", description: "" },
+    { id: 'nouveau-plat-3', name: "", image: "/shooting la saveur etoilee/nouveaux plats (3).png", description: "" },
+    { id: 'nouveau-plat-4', name: "", image: "/shooting la saveur etoilee/nouveaux plats (4).png", description: "" },
+    { id: 'nouveau-plat-5', name: "", image: "/shooting la saveur etoilee/nouveaux plats (5).png", description: "" },
+    { id: 'nouveau-plat-6', name: "", image: "/shooting la saveur etoilee/nouveaux plats (6).png", description: "" },
+    { id: 'nouveau-plat-7', name: "", image: "/shooting la saveur etoilee/nouveaux plats (7).png", description: "" },
     { id: 'plat-1', name: "AUMONIERE DE CREPE ( bettrave fromage frais aux herbes fruit rouge", image: "/shooting la saveur etoilee/AUMONIERE DE CREPE ( bettrave fromage frais aux herbes fruit rouge.png", description: "" },
     { id: 'plat-2', name: "Accra à la morue accompagné de sa sauce créole et ses légumes", image: "/shooting la saveur etoilee/Accra à la morue accompagné de sa sauce créole et ses légumes.png", description: "" },
     { id: 'plat-3', name: "Ballotin de Volaille au Chorizo et legume confie", image: "/shooting la saveur etoilee/Ballotin de Volaille au Chorizo et legume confie.png", description: "" },
@@ -97,7 +104,8 @@ Parce qu'un repas de mariage ne doit pas simplement être bon.
     { id: 'menu-41', name: 'Menu buffet', image: '/shooting la saveur etoilee/nos plats 41.jpg', description: 'Avec tous les contenants' },
     { id: 'menu-42', name: 'Menu buffet', image: '/shooting la saveur etoilee/nos plats 42.jpg', description: 'Avec tous les contenants' },
     { id: 'menu-43', name: 'Menu buffet', image: '/shooting la saveur etoilee/nos plats 43.jpg', description: 'Avec tous les contenants' },
-    { id: 'menu-44', name: 'Menu buffet', image: '/shooting la saveur etoilee/nos plats 44.jpg', description: 'Avec tous les contenants' }
+    { id: 'menu-44', name: 'Menu buffet', image: '/shooting la saveur etoilee/nos plats 44.jpg', description: 'Avec tous les contenants' },
+    { id: 'nouveau-plat-8', name: "", image: "/shooting la saveur etoilee/nouveaux plats (8).png", description: "" }
   ],
 };
 export const DJ_PARTNERS: DjPartner[] = [
