@@ -39,7 +39,7 @@ Parce qu'un repas de mariage ne doit pas simplement être bon.
     { id: 'nouveau-plat-2', name: "", image: "/shooting la saveur etoilee/nouveaux plats (2).png", description: "" },
     { id: 'nouveau-plat-3', name: "", image: "/shooting la saveur etoilee/nouveaux plats (3).png", description: "" },
     { id: 'nouveau-plat-4', name: "", image: "/shooting la saveur etoilee/nouveaux plats (4).png", description: "" },
-    { id: 'nouveau-plat-5', name: "", image: "/shooting la saveur etoilee/nouveaux plats (5).png", description: "" },
+    { id: 'nouveau-plat-5', name: "Darne de saumon mi-cuit, tête d'asperge verte, risotto crémeux", image: "/shooting la saveur etoilee/nouveaux plats (5).png", description: "" },
     { id: 'nouveau-plat-6', name: "", image: "/shooting la saveur etoilee/nouveaux plats (6).png", description: "" },
     { id: 'nouveau-plat-7', name: "", image: "/shooting la saveur etoilee/nouveaux plats (7).png", description: "" },
     { id: 'plat-1', name: "AUMONIERE DE CREPE ( bettrave fromage frais aux herbes fruit rouge", image: "/shooting la saveur etoilee/AUMONIERE DE CREPE ( bettrave fromage frais aux herbes fruit rouge.png", description: "" },
